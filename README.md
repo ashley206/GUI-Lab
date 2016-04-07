@@ -15,16 +15,31 @@ Qt, C++, QML, Javascript, SQLite.
 
 #Screenshots/Mockup
 
+This is the main screen, after the splash screen (to be devloped later). This will show current expenses and incomes that have been tracked recently. This could be for the current month of transactions. 
+
 ![Alt text](https://github.com/ashley206/cst-238/blob/master/gui%20project%20mockup.png?raw=true)
+
+The History tab (bottom right) will take the user to a screen that lists the previous budgets and amounts spent each month. If over the budget, text will be red. If within the budget, the text will be green. Tapping on a month will take the user to a breakdown of the month's included transactions.
+
 ![Alt text](https://github.com/ashley206/cst-238/blob/master/gui%20project%20mockup2.png?raw=true)
+
+The '+' button will add a new transaction, which will lead to this page. The user will define it as an income or expense. They will define a category that the money falls under. Then, the amount to add or remove to the budget. The page will list where the budget currently stands before the changes. Below the line, the budget will be updated budget based on the transaction. 
+
 ![Alt text](https://github.com/ashley206/cst-238/blob/master/gui%20project%20mockup3.png?raw=true)
+
+The categories created will be listed here, along with any transactions that have been filed under them. As shown, food transactions will be listed in the food category (groceries, eating out, etc); Any fun activities will be listed in the entertainment category (seeing a movie, going bowling, etc). The user can add however trends they want with the click of a button. 
+
 ![Alt text](https://github.com/ashley206/cst-238/blob/master/gui%20project%20mockup4.png?raw=true)
 
 #Installation Instructions
 
+To run the Qt Framework: 
 1. Install Qt 5.6
 2. Open Project
 3. Clean all, run qmake, build all, run
+4. 
+To install the application: 
+[ To be determined upon installation creation... ]
 
 #Contribution Guidelines
 
