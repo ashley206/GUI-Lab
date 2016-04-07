@@ -1,7 +1,6 @@
-# GUI-Lab
 # Class Project for CST 238
 
-[logo]
+![Alt text](https://github.com/ashley206/cst-238/blob/master/gui%20project%20logo.png?raw=true)
 
 #Description 
 
@@ -16,7 +15,10 @@ Qt, C++, QML, Javascript, SQLite.
 
 #Screenshots/Mockup
 
-[to be added]
+![Alt text](https://github.com/ashley206/cst-238/blob/master/gui%20project%20mockup.png?raw=true)
+![Alt text](https://github.com/ashley206/cst-238/blob/master/gui%20project%20mockup2.png?raw=true)
+![Alt text](https://github.com/ashley206/cst-238/blob/master/gui%20project%20mockup3.png?raw=true)
+![Alt text](https://github.com/ashley206/cst-238/blob/master/gui%20project%20mockup4.png?raw=true)
 
 #Installation Instructions
 
@@ -26,7 +28,7 @@ Qt, C++, QML, Javascript, SQLite.
 
 #Contribution Guidelines
 
-[to be added]
+There will be no other contributors for this project.
 
 #Bugs and TODO List
 
@@ -44,10 +46,8 @@ Ryan Williams
 Jared Smith
 Joseph Maurer
 
-Inspiration came from thinking of simplistic applications that could still be useful as well as fulfill the requirements necessary for the project. Many ideas were given at the brainstorming session, and this one appeared the most interesting. Examples of GUI-based applications are shown below that inspired the idea: 
-
-[pictures here]
+Inspiration came from thinking of simplistic applications that could still be useful as well as fulfill the requirements necessary for the project. Many ideas were given at the brainstorming session, and this one appeared the most interesting. The goal is to make the core of the application invigorating and useful, but also help extend knowledge of the Qt framework to gain the most from the project.
 
 #License
 
-[no license as of now]
+There is no license currently associated with this project.
