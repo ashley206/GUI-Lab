@@ -4,9 +4,9 @@
 
 #Description 
 
-All labs for the Graphical User Interface class, CST 238, are included in this repository. This will build towards a final project of my choosing that will demonstrate my ability to use GUI concept and tailor them towards a specific project.
+All labs for the Graphical User Interface class, CST 238, are included in this repository. This will build towards a final project of my choosing that will demonstrate my ability to use GUI concepts and tailor them towards a specific project.
 
-The project is a cross platform application that will mimic a budget application. This application is inteded for the users who want to monitor their spending. This is a simple, helpful application that will utilize numerous platforms and store the user's various budget updates using an SQLite database. 
+The project is a cross platform application that will become a budget application. This application is inteded for users who want to monitor their spending. This is a simple, helpful application that will utilize numerous GUI development techniques. The user will be able to track their transactions and understand their spending habits better. The user's various budget updates will be stored using an SQLite database. 
 
 #Technologies
 
@@ -37,7 +37,7 @@ To run the Qt Framework:
 1. Install Qt 5.6
 2. Open Project
 3. Clean all, run qmake, build all, run
-4. 
+
 To install the application: 
 [ To be determined upon installation creation... ]
 
@@ -45,13 +45,17 @@ To install the application:
 
 There will be no other contributors for this project.
 
-#Bugs and TODO List
+#Bugs
 
-TODO: Start the application!!
+Application has not undergone any development, no bugs to report.
+
+#TODO List
+
+TODO: Start the application! The first task will be the splash screen that leads into the app, as well as the home screen. We have not learned much about animations yet, so most of the "flashy" parts of the splash screen will have to wait. 
 
 #Contributor List
 
-Ashley Wagner's brain. c:
+Ashley Wagner's brain. :)
 
 #Credits, Inspiration, Alternatives
 
