@@ -12,15 +12,23 @@ ApplicationWindow {
     visible: true
     width: 480
     height: 640
+
     title: qsTr("PiggyBank")
 
     property bool clicked: false
 
+    Rectangle{
+        anchors.fill: parent
+        color: "white"
+    }
+
     Image{
         id: logo
-        fillMode: Image.PreserveAspectFit
-        anchors.fill: parent
-        source: "c:/Users/Ashley H/Documents/GitHub/cst-238/cst-238/gui project logo.png"
+        //fillMode: Image.Tile
+        //anchors.fill: parent
+        source: "/../../logo.png"
+        anchors.bottom: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
     }
 
 
@@ -37,7 +45,7 @@ ApplicationWindow {
     MyDialog{
         id: dialog
         z:1
-        y: (parent.height/2)-(height/2)
+        y: (parent.height/4)
         x: (parent.width/2)-(width/2)
         widthButton: widthDialog/4
         heightButton: heightDialog/6
@@ -58,7 +66,7 @@ ApplicationWindow {
 
     MyDialog{
         id: dialogName
-        y: (parent.height/2)-(height/2)
+        y: (parent.height/4)
         x: (parent.width/2)-(width/2)
         widthDialog: parent.width/2
         heightDialog: parent.height/4

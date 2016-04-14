@@ -4,5 +4,6 @@
         <file>MyButton.qml</file>
         <file>TextRect.qml</file>
         <file>MyDialog.qml</file>
+        <file>../../logo.png</file>
     </qresource>
 </RCC>
