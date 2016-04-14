@@ -10,59 +10,64 @@ import QtQuick.Controls 1.5
 
 ApplicationWindow {
     visible: true
-    width: 640
-    height: 480
+    width: 480
+    height: 640
     title: qsTr("PiggyBank")
 
+    property bool clicked: false
 
-//    MyButton
-//    {
-//        id: btn_colorchange
-//        width: parent.width/4
-//        height: parent.height/4
-//        color: "red"
-//        text: "help"
-//        anchors.centerIn: parent
-//        mouseArea.onClicked:
-//        {
-//            color = "green";
-//        }
-//        mouseArea.onEntered:
-//        {
-//            color = "blue";
-//        }
-//        mouseArea.onExited:
-//        {
-//            color = "red";
-//        }
-//    }
+    Image{
+        id: logo
+        fillMode: Image.PreserveAspectFit
+        anchors.fill: parent
+        source: "c:/Users/Ashley H/Documents/GitHub/cst-238/cst-238/gui project logo.png"
+    }
 
-//    TextRect
-//    {
-//        id: text_box
-//        width: parent.width/4
-//        height: parent.height/6
-//        anchors.bottom: btn_colorchange.top
-//        anchors.horizontalCenter: btn_colorchange.horizontalCenter
-//        text: "PiggyBank - GUI Project"
-//        color: "orange"
-//        font.family: "helvetica"
-//        border.color: "red"
-//    }
+
+    Text{
+        id: title
+        color: "#51c460"
+        font.bold: true
+        horizontalAlignment: Text.AlignHCenter
+        x: (parent.width/2)-(width/2)
+        font.pointSize: 20
+        text: "PIGGYBANK"
+    }
 
     MyDialog{
         id: dialog
-        y: (parent.height/4)-(height/2)
-        x: (parent.width/3)-(width/2)
-        width: parent.width/2
-        height: parent.height/2
-        textDialog: "blah blah"
+        z:1
+        y: (parent.height/2)-(height/2)
+        x: (parent.width/2)-(width/2)
+        widthButton: widthDialog/4
+        heightButton: heightDialog/6
+        textDialog: "Welcome to Piggy Bank!\nThis is a budgeting application that can help any user know where their money goes and become smarter about their spending! With an account, the uesr has full access to ways of adding, organizing, and viewing all sorts of transactions and budgets."
         textButton: "click!"
-        heightDialog: parent.width/4
-        widthDialog: parent.height/4
-
+        heightDialog: parent.height/3
+        widthDialog: parent.width/1.5
         dragToggle: true
 
+        mouseArea.onClicked: {
+            if(mouseArea.onClicked && clicked)
+                dialog.visible = false;
+            textDialog = "You've successfully clicked the button! Now you can move on in the application.";
+            textButton = "Close";
+            clicked = true;
+        }
     }
 
+    MyDialog{
+        id: dialogName
+        y: (parent.height/2)-(height/2)
+        x: (parent.width/2)-(width/2)
+        widthDialog: parent.width/2
+        heightDialog: parent.height/4
+        widthButton: widthDialog/4
+        heightButton: heightDialog/6
+        textDialog: "Hello, from Ashley Wagner!"
+        textButton: "Goodbye!"
+        mouseArea.onClicked: {
+            Qt.quit();
+        }
+    }
 }

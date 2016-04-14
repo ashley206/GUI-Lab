@@ -6,13 +6,21 @@ import QtQuick.Dialogs 1.2
 Rectangle{
     property alias text: textArea.text
     property alias font: textArea.font
-    property alias color: textArea.color
+    property alias colorRectArea: rectArea.color
 
-    border.width: 2
-    color: "light green"
+    id:rectArea
+    colorRectArea: "white"
+    border.color: "black"
+    border.width: 1
+
     Text{
         id:textArea
+        horizontalAlignment: Text.AlignHCenter
         anchors.centerIn: parent
+        width: parent.width
+        wrapMode: Text.WordWrap
+
     }
+
 }
 
