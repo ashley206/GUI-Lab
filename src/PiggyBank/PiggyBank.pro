@@ -4,7 +4,11 @@ QT += qml quick
 
 CONFIG += c++11
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    User.cpp \
+    Item.cpp \
+    category.cpp \
+    categories.cpp
 
 RESOURCES += qml.qrc
 
@@ -17,3 +21,10 @@ include(deployment.pri)
 DISTFILES += \
     ../../gui project logo.png \
     ../../img/logo.png
+
+HEADERS += \
+    User.h \
+    Item.h \
+    Budget.h \
+    category.h \
+    categories.h
