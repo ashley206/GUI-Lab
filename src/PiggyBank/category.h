@@ -8,11 +8,15 @@ using std::list;
 class Category
 {
 public:
-    Category();
+    Category(char * name);
     void AddItem(char * name, bool expense, int amount);
     void RemoveItem(Item item);
+    void SetName(char * name);
+    char * GetName();
     EditItem(Item item);
+    ~Category();
 private:
+    char * m_name;
     list<Item> m_items;
 };
 

@@ -10,10 +10,10 @@ public:
     User( const User & user);
     // Overloading Op=?
 
-    char * getName();
-    void setName(char * name);
-    int getBudget();
-    void setBudget(int budget);
+    char * GetName();
+    void SetName(char * name);
+    int GetBudget();
+    void SetBudget(int budget);
 
     ~User();
 private:

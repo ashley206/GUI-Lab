@@ -41,22 +41,27 @@ bool Item::operator==(const Item & rhs)
         (m_isExpense == rhs.m_isExpense));
 }
 
-void Item::setName(char * name)
+void Item::SetName(char * name)
 {
+    char * temp = new char[strlen(name) + 1];
+    strcpy(temp, name);
 
+    delete [] m_name;
+
+    m_name = temp;
 }
 
-char * Item::getName()
+char * Item::GetName()
 {
     return m_name;
 }
 
-void Item::setAmount(int amount)
+void Item::SetAmount(int amount)
 {
     m_amount = amount;
 }
 
-int Item::getAmount()
+int Item::GetAmount()
 {
     return m_amount;
 }
@@ -66,7 +71,14 @@ bool Item::IsExpense()
     return m_isExpense;
 }
 
+void Item::SetExpense(bool expense)
+{
+    m_isExpense = expense;
+}
+
 Item::~Item()
 {
-
+    delete [] m_name;
+    m_amount = 0;
+    m_isExpense = false;
 }

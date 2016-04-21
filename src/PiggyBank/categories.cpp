@@ -1,4 +1,4 @@
-#include "categories.h"
+#include "Categories.h"
 
 Categories::Categories()
 {
@@ -8,7 +8,8 @@ Categories::Categories()
 
 Categories::AddCategory(char * name)
 {
-
+    Category cat = new Category(name);
+    m_categories.push_back(cat);
 }
 
 Categories::RemoveCategory(Category c)
@@ -18,5 +19,18 @@ Categories::RemoveCategory(Category c)
     {
         if (*it == c)
             items.erase(it++);
+    }
+}
+
+Categories::~Categories()
+{
+    PurgeCategories();
+}
+
+void Categories::PurgeCategories()
+{
+    for(int i = 0; i < m_categories.size(); i++)
+    {
+        delete m_categories[i];
     }
 }

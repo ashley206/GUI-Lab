@@ -8,11 +8,12 @@ public:
     Item(char * name, bool expense, int amount);
     Item & operator=(const Item & rhs);
     bool operator==(const Item & rhs);
-    void setName(char * name);
-    char * getName();
-    void setAmount(int amount);
-    int getAmount();
+    void SetName(char * name);
+    char * GetName();
+    void SetAmount(int amount);
+    int GetAmount();
     bool IsExpense();
+    void SetExpense(bool expense);
     ~Item();
 private:
     char * m_name;

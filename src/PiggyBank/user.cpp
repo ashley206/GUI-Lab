@@ -20,23 +20,27 @@ User::User( const User & user)
     m_budget = user.m_budget;
 }
 
-void User::setName(char *name)
+void User::SetName(char * name)
 {
-    char * str = new char[strlen(name) + 1];
-    strcpy(str, name);
+    char * temp = new char[strlen(name) + 1];
+    strcpy(temp, name);
+
+    delete [] m_name;
+
+    m_name = temp;
 }
 
-char * User::getName()
+char * User::GetName()
 {
     return m_name;
 }
 
-void User::setBudget(int budget)
+void User::SetBudget(int budget)
 {
     m_budget = budget;
 }
 
-int User::getBudget()
+int User::GetBudget()
 {
     return m_budget;
 }

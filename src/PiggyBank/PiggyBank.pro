@@ -7,8 +7,9 @@ CONFIG += c++11
 SOURCES += main.cpp \
     User.cpp \
     Item.cpp \
-    category.cpp \
-    categories.cpp
+    Category.cpp \
+    Categories.cpp \
+    Budget.cpp
 
 RESOURCES += qml.qrc
 
@@ -26,5 +27,5 @@ HEADERS += \
     User.h \
     Item.h \
     Budget.h \
-    category.h \
-    categories.h
+    Category.h \
+    Categories.h

@@ -9,9 +9,9 @@ using std::list;
 class Budget
 {
 public:
-
+    Budget();
 protected:
-    list<Item> m_items;
+    list<Categories> m_budget;
     int m_budget;
 };
 
