@@ -9,11 +9,17 @@ Category::Category(char * name)
 bool Category::operator==(const Category & rhs)
 {
     bool valid = true;  // assume items are equivalent
-    for(int i = 0; i < m_items.size() && valid; i++)
-    {
-        if(m_items[i] != rhs.m_items[i])
-            valid = false;
-    }
+
+//    std::list<Item *>::iterator it;
+//    for (it = m_items.begin(); it != m_items.end() && valid; it++)
+//    {
+//       std::list<Item *>::iterator it2;
+//       for(it2 = const_cast<Category>(rhs).m_items.begin(); it2 != rhs.m_items.end(); it2++)
+//       {
+//           if(it == it2)
+//               valid = false;
+//       }
+//    }
     return valid;
 }
 void Category::SetName(char * name)
@@ -32,21 +38,21 @@ char * Category::GetName()
 
 void Category::AddItem(char * name, bool expense, int amount)
 {
-    Item item = new Item(name, expense, amount);
+    Item * item = new Item(name, expense, amount);
     m_items.push_back(item);
 }
 
-void Category::RemoveItem(Item item)
+void Category::RemoveItem(Item * item)
 {
-    std::list<Item>::iterator it;
-    for (it = items.begin(); it != items.end(); it++)
+    std::list<Item *>::iterator it;
+    for (it = m_items.begin(); it != m_items.end(); it++)
     {
         if (*it == item)
-            items.erase(it++);
+            m_items.erase(it++);
     }
 }
 
-Category::EditItem(Item item, char * name, bool expense, int amount)
+void Category::EditItem(Item item, char * name, bool expense, int amount)
 {
     item.SetName(name);
     item.SetExpense(expense);
@@ -63,6 +69,6 @@ void Category::PurgeItems()
 {
     for(int i = 0; i < m_items.size(); i++)
     {
-        delete m_items[i];
+        //delete m_items[i];
     }
 }

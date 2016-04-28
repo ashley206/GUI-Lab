@@ -6,19 +6,19 @@ Categories::Categories()
 }
 
 
-Categories::AddCategory(char * name)
+void Categories::AddCategory(char * name)
 {
-    Category cat = new Category(name);
+    Category * cat = new Category(name);
     m_categories.push_back(cat);
 }
 
-Categories::RemoveCategory(Category c)
+void Categories::RemoveCategory(Category * c)
 {
-    std::list<Category>::iterator it;
-    for (it = items.begin(); it != items.end(); it++)
+    std::list<Category *>::iterator it;
+    for (it = m_categories.begin(); it != m_categories.end(); it++)
     {
         if (*it == c)
-            items.erase(it++);
+            m_categories.erase(it++);
     }
 }
 
@@ -29,8 +29,9 @@ Categories::~Categories()
 
 void Categories::PurgeCategories()
 {
-    for(int i = 0; i < m_categories.size(); i++)
+    std::list<Category *>::iterator it;
+    for (it = m_categories.begin(); it != m_categories.end(); it++)
     {
-        delete m_categories[i];
+        m_categories.erase(it++);
     }
 }

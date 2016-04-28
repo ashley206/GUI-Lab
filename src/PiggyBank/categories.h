@@ -11,11 +11,12 @@ class Categories
 {
 public:
     Categories();
-    AddCategory(char * name);
-    RemoveCategory(Category c);
+    void AddCategory(char * name);
+    void RemoveCategory(Category * c);
+    void PurgeCategories();
     ~Categories();
 private:
-    list<Category> m_categories;
+    list<Category *> m_categories;
     int m_count;
 };
 
