@@ -24,7 +24,7 @@ Window {
         anchors.fill: parent
         mouseArea.onClicked: {
             splash_screen.visible = false;
-            settings_screen.visible - true;
+            settings_screen.visible = true;
         }
 
     }
