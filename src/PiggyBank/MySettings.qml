@@ -2,10 +2,13 @@ import QtQuick 2.0
 import QtQuick.Controls 1.5
 import Qt.labs.settings 1.0
 
+
+
 Rectangle{
     id: settings_root
     anchors.fill: parent
     color: "white"
+    property alias back_mouseArea: back_btn.mouseArea
 
 
     Settings{
@@ -19,7 +22,6 @@ Rectangle{
         text: "Settings"
         color: "#51c460"
         font.bold: true
-
         font.pointSize: 14
         anchors.top: parent.top
         anchors.topMargin: 10
@@ -29,11 +31,14 @@ Rectangle{
 
     MyButton{
         id: back_btn
-
-        mouseArea.onClicked: {
-
-        }
-
+        // eventually want an image here
+        text: "Back"
+        anchors.top: parent.top
+        anchors.left: parent.left
+        // to be changed?
+        width: parent.width/8
+        height: parent.width/8
+        color: "blue"
     }
 
     Text{

@@ -7,5 +7,6 @@
         <file>../../logo.png</file>
         <file>SplashTitle.qml</file>
         <file>MySettings.qml</file>
+        <file>MyTitleBar.qml</file>
     </qresource>
 </RCC>

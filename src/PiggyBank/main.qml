@@ -32,6 +32,10 @@ Window {
         id: settings_screen
         visible: false
         anchors.fill: parent
+        back_mouseArea.onClicked: {
+            splash_screen.visible = true;
+            settings_screen.visible = false;
+        }
     }
 
     //            title_x: (parent.width/2)-(width/2)
