@@ -17,16 +17,11 @@ Rectangle{
         property alias currency: currency_box.currentIndex
     }
 
-    Text{
+    MyTitleBar{
         id: settings_title
-        text: "Settings"
-        color: "#51c460"
-        font.bold: true
-        font.pointSize: 14
-        anchors.top: parent.top
-        anchors.topMargin: 10
-        anchors.horizontalCenter: parent.horizontalCenter
-        horizontalAlignment: Text.AlignHCenter
+        title: "Settings"
+        titleSize: 0
+        titleHeight: parent.width/8
     }
 
     MyButton{
@@ -35,10 +30,9 @@ Rectangle{
         text: "Back"
         anchors.top: parent.top
         anchors.left: parent.left
-        // to be changed?
-        width: parent.width/8
-        height: parent.width/8
-        color: "blue"
+        width: settings_title.titleHeight
+        height: settings_title.titleHeight
+        color: settings_title.color
     }
 
     Text{
