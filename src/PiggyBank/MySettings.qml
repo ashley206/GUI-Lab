@@ -7,8 +7,8 @@ import Qt.labs.settings 1.0
 Rectangle{
     id: settings_root
     anchors.fill: parent
-    color: "white"
-    property alias back_mouseArea: back_btn.mouseArea
+    color: "transparent"
+    property alias back_mouseArea: settings_title.back_btn_mouseArea
 
 
     Settings{
@@ -20,26 +20,19 @@ Rectangle{
     MyTitleBar{
         id: settings_title
         title: "Settings"
-        titleSize: 0
-        titleHeight: parent.width/8
+        titleSize: 20
+        back_visible: true
     }
 
-    MyButton{
-        id: back_btn
-        // eventually want an image here
-        text: "Back"
-        anchors.top: parent.top
-        anchors.left: parent.left
-        width: settings_title.titleHeight
-        height: settings_title.titleHeight
-        color: settings_title.color
-    }
+
 
     Text{
         id: colorblind_txt
+        y: 95
         text: "Colorblind mode"
+        anchors.horizontalCenterOffset: 1
         font.pointSize: 11
-        anchors.top: settings_title.bottom
+        anchors.top: settings_title.titleBottom
         anchors.topMargin: 15
         horizontalAlignment: Text.AlignHCenter
         anchors.horizontalCenter: parent.horizontalCenter

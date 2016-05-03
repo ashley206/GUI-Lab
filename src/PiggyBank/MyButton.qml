@@ -8,6 +8,7 @@ Rectangle
     property alias mouseArea:mouseArea
     property alias text: buttonText.text
     property alias fontSize: buttonText.font.pointSize
+    property alias textColor: buttonText.color
 
     id: button
 

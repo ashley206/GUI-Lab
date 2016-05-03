@@ -6,13 +6,15 @@ Rectangle{
 
     property alias title_x: title.x
     property alias subtitle_x: subtitle.x
-    property alias mouseArea: settings_btn.mouseArea
+    property alias settings_mouseArea: settings_btn.mouseArea
+    property alias budget_mouseArea: budget_btn.mouseArea
     property alias text: title.text
 
     Text{
         id: title
         color: "#51c460"
         font.bold: true
+        width: parent.width
         horizontalAlignment: Text.AlignHCenter
         //x: (parent.width/2)-(width/2)
         x: title_x
@@ -22,6 +24,7 @@ Rectangle{
     Text{
         id: subtitle
         color: "#51c460"
+        width: parent.width
         horizontalAlignment: Text.AlignHCenter
         anchors.top: title.bottom
         anchors.topMargin: 10
@@ -41,36 +44,28 @@ Rectangle{
     }
 
     MyButton{
+        id: budget_btn
+        text: "Let's Get Budgeting!"
+        height: parent.height/10
+        width: 9*(parent.width/10)
+        color: "#51c460"
+        fontSize: 12
+        anchors.bottom: settings_btn.top
+        anchors.bottomMargin: 10
+        anchors.horizontalCenter: parent.horizontalCenter
+    }
+
+    MyButton{
         id: settings_btn
         text: "Settings"
         height: parent.height/10
-        width: parent.width-30
+        width: 9*(parent.width/10)
         color: "#51c460"
         fontSize: 12
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 10
         anchors.horizontalCenter: parent.horizontalCenter
-
     }
 }
 
 
-//    Text{
-//        id: title
-//        color: "#51c460"
-//        font.bold: true
-//        horizontalAlignment: Text.AlignHCenter
-//        x: (parent.width/2)-(width/2)
-//        font.pointSize: 30
-//        text: "PIGGYBANK"
-//    }
-//    Text{
-//        id: subtitle
-//        color: "#51c460"
-//        horizontalAlignment: Text.AlignHCenter
-//        anchors.top: title.bottom
-//        anchors.topMargin: 10
-//        x: (parent.width/2)-(width/2)
-//        font.pointSize: 12
-//        text: "A budgeting solution!"
-//    }
