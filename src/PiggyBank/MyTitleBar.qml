@@ -1,22 +1,18 @@
 import QtQuick 2.0
 
 Rectangle{
-    id: titlebar_wrapper
-    anchors.fill: parent
-    color: "transparent"
 
     property alias title: title_txt.text
     property alias titleHeight: bar_rect.height
     property alias titleBottom: bar_rect.bottom
     property alias back_visible: back_btn.visible
     property alias back_btn_mouseArea: back_btn.mouseArea
-    Rectangle{
-        id: bar_rect
-        width: parent.width
-        height: parent.width/8
-        color: "#1EAF64"
-        anchors.top: parent.top
-    }
+
+    id: bar_rect
+    width: parent.width
+    height: parent.width/8
+    color: "#1EAF64"
+    anchors.top: parent.top
 
     Text{
         id: title_txt
@@ -31,7 +27,7 @@ Rectangle{
 
     MyButton{
         id: back_btn
-        visible: false
+        visible: true
         // eventually want an image here
         text: "Back"
         textColor: "white"

@@ -2,7 +2,7 @@ import QtQuick 2.0
 
 Rectangle{
     anchors.fill: parent
-    color: "white"
+    color: "transparent"
 
     property alias title_x: title.x
     property alias subtitle_x: subtitle.x

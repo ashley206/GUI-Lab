@@ -28,11 +28,10 @@ Rectangle{
 
     Text{
         id: colorblind_txt
-        y: 95
         text: "Colorblind mode"
         anchors.horizontalCenterOffset: 1
         font.pointSize: 11
-        anchors.top: settings_title.titleBottom
+        anchors.top: settings_title.bottom
         anchors.topMargin: 15
         horizontalAlignment: Text.AlignHCenter
         anchors.horizontalCenter: parent.horizontalCenter

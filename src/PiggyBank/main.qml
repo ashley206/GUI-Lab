@@ -41,7 +41,22 @@ Window {
             splash_screen.visible = true;
             budget_screen.visible = false;
         }
+        add_mouseArea.onClicked: {
+            budget_screen.visible = false;
+            add_screen.visible = true;
+        }
     }
+
+    MyAddScreen{
+        id: add_screen
+        visible: false
+        anchors.fill: parent
+        back_mouseArea.onClicked: {
+            budget_screen.visible = true;
+            add_screen.visible = false;
+        }
+    }
+
     MySettings{
         id: settings_screen
         visible: false
