@@ -31,6 +31,21 @@ The categories created will be listed here, along with any transactions that hav
 
 ![Alt text](https://github.com/ashley206/cst-238/blob/master/gui%20project%20mockup4.png?raw=true)
 
+#Progress:
+
+5/2/2016:
+Splash Page:
+
+![Alt text](https://github.com/ashley206/cst-238/blob/master/Week%206_splash.PNG?raw=true)
+
+Settings Page: (settings will save after close and keep the last state) 
+
+![Alt text](https://github.com/ashley206/cst-238/blob/master/Week%206_settings.PNG?raw=true)
+
+Add Page:
+
+![Alt text](https://github.com/ashley206/cst-238/blob/master/Week%206_add.PNG?raw=true)
+
 #Installation Instructions
 
 To run the Qt Framework: 
@@ -52,6 +67,7 @@ Application has not undergone any development, no bugs to report.
 #TODO List
 
 TODO: Start the application! The first task will be the splash screen that leads into the app, as well as the home screen. We have not learned much about animations yet, so most of the "flashy" parts of the splash screen will have to wait. 
+5/2/2016: Implement C++ code behind for adding items and categories. Make pages for adding items and categories. 
 
 #Contributor List
 
