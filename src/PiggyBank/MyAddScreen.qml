@@ -28,7 +28,9 @@ Rectangle{
         color: add_title.color
         mouseArea.onClicked: {
             console.log("You clicked add item.")
+
         }
+
     }
 
     MyButton{
