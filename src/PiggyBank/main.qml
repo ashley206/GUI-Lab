@@ -25,6 +25,7 @@ Window {
         settings_mouseArea.onClicked: {
             splash_screen.visible = false;
             settings_screen.visible = true;
+
         }
         budget_mouseArea.onClicked: {
             splash_screen.visible = false;
@@ -53,6 +54,12 @@ Window {
         anchors.fill: parent
         back_mouseArea.onClicked: {
             budget_screen.visible = true;
+            add_screen.visible = false;
+        }
+        addCategory_mouseArea.onClicked: {
+            add_screen.visible = false;
+        }
+        addItem_mouseArea.onClicked: {
             add_screen.visible = false;
         }
     }

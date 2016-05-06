@@ -10,5 +10,6 @@
         <file>MyTitleBar.qml</file>
         <file>MyBudget.qml</file>
         <file>MyAddScreen.qml</file>
+        <file>AddItemScreen.qml</file>
     </qresource>
 </RCC>

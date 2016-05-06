@@ -1,13 +1,15 @@
 #ifndef BUDGET_H
 #define BUDGET_H
 
+#include <QString>
 #include <QObject>
 #include <QDebug>
 #include <QtGlobal>
+#include <QList>
 //#include <QTime>
 
 #include <list>
-#include "Item.h"
+//#include "Item.h"
 #include "Category.h"
 #include <string.h>
 using std::list;
@@ -18,13 +20,16 @@ class Budget : public QObject
 
 public:
     Budget();
-    void AddCategory(char * name);
-    void RemoveCategory(Category * c);
-    void PurgeCategories();
-
     ~Budget();
+public slots:
+    int getCount();
+    void addCategory(QString name);
+    void removeCategory(Category * c);
+    void purgeCategories();
+    QString displayCategoryName(int i);
+
 protected:
-    list<Category *> m_categories;
+    QList<Category *> m_categories;
     int m_budget;
     int m_count;
 };

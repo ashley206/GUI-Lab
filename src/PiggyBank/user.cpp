@@ -2,35 +2,37 @@
 
 User::User()
 {
-    m_name = nullptr;
+    m_name = "nullptr""";
     m_budget = 0;
 }
 
-User::User(char *name, int budget)
+User::User(QString name, int budget)
 {
-    m_name = new char[strlen(name) + 1];
-    strcpy(m_name, name);
+//    m_name = new char[strlen(name) + 1];
+//    strcpy(m_name, name);
+//    m_budget = budget;
+    m_name = name;
     m_budget = budget;
 }
 
 User::User( const User & user)
 {
-    char * m_name = new char[strlen(user.m_name) + 1];
-    strcpy(m_name, user.m_name);
+    QString m_name = user.m_name;//new char[strlen(user.m_name) + 1];
+    //strcpy(m_name, user.m_name);
     m_budget = user.m_budget;
 }
 
-void User::SetName(char * name)
+void User::SetName(QString name)
 {
-    char * temp = new char[strlen(name) + 1];
-    strcpy(temp, name);
+//    char * temp = new char[strlen(name) + 1];
+//    strcpy(temp, name);
+    m_name = name;
+    //delete [] m_name;
 
-    delete [] m_name;
-
-    m_name = temp;
+   // m_name = temp;
 }
 
-char * User::GetName()
+QString User::GetName()
 {
     return m_name;
 }
@@ -47,6 +49,6 @@ int User::GetBudget()
 
 User::~User()
 {
-    delete[]m_name;
+    m_name = "";
     m_budget = 0;
 }

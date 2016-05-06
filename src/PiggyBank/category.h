@@ -1,6 +1,7 @@
 #ifndef CATEGORY_H
 #define CATEGORY_H
 #include <list>
+#include <QString>
 #include <string.h>
 #include "Item.h"
 using std::list;
@@ -8,17 +9,17 @@ using std::list;
 class Category
 {
 public:
-    Category(char * name);
+    Category(QString name);
     bool operator==(const Category & rhs);
-    void AddItem(char * name, bool expense, int amount);
-    void RemoveItem(Item * item);
-    void SetName(char * name);
-    char * GetName();
-    void EditItem(Item item, char * name, bool expense, int amount);
-    void PurgeItems();
+    void addItem(QString name, bool expense, int amount);
+    void removeItem(Item * item);
+    void setName(QString name);
+    QString getName();
+    void editItem(Item item, QString name, bool expense, int amount);
+    void purgeItems();
     ~Category();
 private:
-    char * m_name;
+    QString m_name;
     list<Item *> m_items;
 };
 

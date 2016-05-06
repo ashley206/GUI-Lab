@@ -8,7 +8,6 @@ SOURCES += main.cpp \
     User.cpp \
     Item.cpp \
     Category.cpp \
-    Categories.cpp \
     Budget.cpp
 
 RESOURCES += qml.qrc
@@ -27,5 +26,4 @@ HEADERS += \
     User.h \
     Item.h \
     Budget.h \
-    Category.h \
-    Categories.h
+    Category.h

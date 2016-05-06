@@ -13,8 +13,8 @@ int main(int argc, char *argv[])
     QCoreApplication::setOrganizationName("HelpfulStuff");
     QCoreApplication::setOrganizationDomain(".com");
 
-    Budget budget;
-    engine.rootContext()->setContextProperty("MyBudget", &budget);
+    Budget TheBigBudget;
+    engine.rootContext()->setContextProperty("TheBigBudget", &TheBigBudget);
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 

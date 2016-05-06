@@ -6,6 +6,8 @@ Rectangle{
     color: "transparent"
 
     property alias back_mouseArea: add_title.back_btn_mouseArea
+    property alias addCategory_mouseArea: add_category_btn.mouseArea
+    property alias addItem_mouseArea: add_item_btn.mouseArea
 
     MyTitleBar{
         id: add_title
@@ -45,6 +47,10 @@ Rectangle{
         color: add_title.color
         mouseArea.onClicked: {
             console.log("You clicked add category.")
+//            console.log(TheBigBudget.GetCount());
+//            TheBigBudget.addCategory("blahhh");
+//            console.log(TheBigBudget.GetCount());
+
         }
     }
 }

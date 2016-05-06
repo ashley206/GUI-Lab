@@ -1,15 +1,13 @@
 #include "Category.h"
 
-Category::Category(char * name)
+Category::Category(QString name)
 {
-    m_name = new char[strlen(name) + 1];
-    strcpy(m_name, name);
+    m_name = name;
 }
 
 bool Category::operator==(const Category & rhs)
 {
-    bool valid = true;  // assume items are equivalent
-
+    return (m_items == rhs.m_items && m_name == rhs.m_name);
 //    std::list<Item *>::iterator it;
 //    for (it = m_items.begin(); it != m_items.end() && valid; it++)
 //    {
@@ -20,29 +18,29 @@ bool Category::operator==(const Category & rhs)
 //               valid = false;
 //       }
 //    }
-    return valid;
+
 }
-void Category::SetName(char * name)
+void Category::setName(QString name)
 {
-    char * temp = new char[strlen(name) + 1];
-    strcpy(temp, name);
+//    char * temp = new char[strlen(name) + 1];
+//    strcpy(temp, name);
 
-    delete [] m_name;
+//    delete [] m_name;
 
-    m_name = temp;
+    m_name = name;
 }
-char * Category::GetName()
+QString Category::getName()
 {
     return m_name;
 }
 
-void Category::AddItem(char * name, bool expense, int amount)
+void Category::addItem(QString name, bool expense, int amount)
 {
     Item * item = new Item(name, expense, amount);
     m_items.push_back(item);
 }
 
-void Category::RemoveItem(Item * item)
+void Category::removeItem(Item * item)
 {
     std::list<Item *>::iterator it;
     for (it = m_items.begin(); it != m_items.end(); it++)
@@ -52,20 +50,20 @@ void Category::RemoveItem(Item * item)
     }
 }
 
-void Category::EditItem(Item item, char * name, bool expense, int amount)
+void Category::editItem(Item item, QString name, bool expense, int amount)
 {
-    item.SetName(name);
-    item.SetExpense(expense);
-    item.SetAmount(amount);
+    item.setName(name);
+    item.setExpense(expense);
+    item.setAmount(amount);
 }
 
 Category::~Category()
 {
-    delete []m_name;
-    PurgeItems();
+    m_name = "";
+    purgeItems();
 }
 
-void Category::PurgeItems()
+void Category::purgeItems()
 {
     for(int i = 0; i < m_items.size(); i++)
     {
