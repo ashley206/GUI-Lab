@@ -64,7 +64,7 @@ ApplicationWindow {
                 }
                 onClicked:
                 {
-                    colorPicker.visible = true;
+                    picker.visible = true;
                 }
 
                 preventStealing: false
@@ -257,6 +257,11 @@ ApplicationWindow {
             }
         }
 
+        ColorPicker
+        {
+            id: picker
+            pickerVisible: false
+        }
 
 //        Rectangle
 //        {
