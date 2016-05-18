@@ -9,6 +9,16 @@ int Budget::getCount()
     return m_count;
 }
 
+void Budget::setBudget(int budget)
+{
+    m_budget = budget;
+}
+
+int Budget::getBudget()
+{
+    return m_budget;
+}
+
 void Budget::addCategory(QString name)
 {
     Category * cat = new Category(name);

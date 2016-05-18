@@ -11,5 +11,7 @@
         <file>MyBudget.qml</file>
         <file>MyAddScreen.qml</file>
         <file>AddItemScreen.qml</file>
+        <file>AddCategoryScreen.qml</file>
+        <file>MySetupScreen.qml</file>
     </qresource>
 </RCC>

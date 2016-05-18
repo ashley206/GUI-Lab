@@ -6,25 +6,14 @@ Rectangle{
     id: add_item_wrapper
     anchors.fill: parent
     color: "transparent"
-
+    property alias back_mouseArea: add_item_title.back_btn_mouseArea
 
     MyTitleBar{
         id: add_item_title
         title: "Add Item"
         back_visible: true
     }
-    function poplist()
-    {
-        TheBigBudget.addCategory("blah");
-        TheBigBudget.addCategory("blah");
-        TheBigBudget.addCategory("blah");
-        TheBigBudget.addCategory("blah");
 
-        for(var i = 0; i < TheBigBudget.getCount(); i++)
-        {
-            console.log(TheBigBudget.displayCategoryName(i));
-        }
-    }
 //    ComboBox{
 //        id: category_box
 //        editable: false

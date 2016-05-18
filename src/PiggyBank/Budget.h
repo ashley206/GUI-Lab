@@ -23,6 +23,8 @@ public:
     ~Budget();
 public slots:
     int getCount();
+    void setBudget(int budget);
+    int getBudget();
     void addCategory(QString name);
     void removeCategory(Category * c);
     void purgeCategories();

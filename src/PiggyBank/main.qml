@@ -46,6 +46,10 @@ Window {
             budget_screen.visible = false;
             add_screen.visible = true;
         }
+        setup_mouseArea.onClicked: {
+            budget_screen.visible = false;
+            setup_screen.visible = true;
+        }
     }
 
     MyAddScreen{
@@ -58,9 +62,38 @@ Window {
         }
         addCategory_mouseArea.onClicked: {
             add_screen.visible = false;
+            addCategory_screen.visible = true;
         }
         addItem_mouseArea.onClicked: {
             add_screen.visible = false;
+            addItem_screen.visible = true;
+        }
+    }
+
+    AddItemScreen{
+        id: addItem_screen
+        visible: false
+        anchors.fill: parent
+        back_mouseArea.onClicked: {
+            addItem_screen.visible = false;
+            add_screen.visible = true;
+        }
+    }
+    AddCategoryScreen{
+        id: addCategory_screen
+        visible: false
+        anchors.fill: parent
+        back_mouseArea.onClicked: {
+            addCategory_screen.visible = false;
+            add_screen.visible = true;
+        }
+    }
+    MySetupScreen{
+        id: setup_screen
+        visible: false
+        back_mouseArea.onClicked:{
+            setup_screen.visible = false;
+            budget_screen.visible = true;
         }
     }
 

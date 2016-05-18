@@ -48,6 +48,7 @@ Rectangle{
         text: "Let's Get Budgeting!"
         height: parent.height/10
         width: 9*(parent.width/10)
+        textColor: "white"
         color: "#51c460"
         fontSize: 12
         anchors.bottom: settings_btn.top
@@ -60,6 +61,7 @@ Rectangle{
         text: "Settings"
         height: parent.height/10
         width: 9*(parent.width/10)
+        textColor: "white"
         color: "#51c460"
         fontSize: 12
         anchors.bottom: parent.bottom
