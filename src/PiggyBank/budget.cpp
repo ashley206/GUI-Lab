@@ -9,12 +9,12 @@ int Budget::getCount()
     return m_count;
 }
 
-void Budget::setBudget(int budget)
+void Budget::setBudget(double budget)
 {
     m_budget = budget;
 }
 
-int Budget::getBudget()
+double Budget::getBudget()
 {
     return m_budget;
 }

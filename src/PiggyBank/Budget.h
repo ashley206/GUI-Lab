@@ -23,8 +23,8 @@ public:
     ~Budget();
 public slots:
     int getCount();
-    void setBudget(int budget);
-    int getBudget();
+    void setBudget(double budget);
+    double getBudget();
     void addCategory(QString name);
     void removeCategory(Category * c);
     void purgeCategories();
@@ -32,7 +32,7 @@ public slots:
 
 protected:
     QList<Category *> m_categories;
-    int m_budget;
+    double m_budget;
     int m_count;
 };
 

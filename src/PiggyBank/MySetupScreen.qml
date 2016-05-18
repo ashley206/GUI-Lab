@@ -52,7 +52,7 @@ Rectangle{
         anchors.horizontalCenter: parent.horizontalCenter
         mouseArea.onClicked: {
             TheBigBudget.setBudget(budget_tf.text);
-            console.log("Set the budget to: ", budget_tf.text);
+            console.log("Set the budget to: ", TheBigBudget.getBudget());
         }
     }
 }
