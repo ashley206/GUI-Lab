@@ -38,6 +38,52 @@ Rectangle{
         anchors.bottom: budget_wrapper.bottom
     }
 
+    Rectangle{
+        id: budget_table
+        width: budget_wrapper.width
+        height: budget_wrapper.height
+        anchors.top: budget_title.bottom
+        anchors.topMargin: 15
+        anchors.leftMargin: 10
+        anchors.rightMargin: 10
+        anchors.horizontalCenter: budget_wrapper.horizontalCenter
+        ListModel{
+            id: budget_model
+            ListElement
+            {
+                name: "blah"
+                left: "blah"
+
+            }
+        }
+        Component
+        {
+            id: budget_delegate
+            Row
+            {
+                spacing: 15
+                Text
+                {
+                    text: "blah"
+                }
+                Text
+                {
+                    text: "blah"
+                }
+                Text
+                {
+                    text: "Blah"
+                }
+            }
+        }
+        ListView{
+            anchors.fill: parent
+            anchors.leftMargin: 20
+            model: budget_model
+            delegate: budget_delegate
+        }
+    }
+
     // need a way to list all current budgets. may need a control for that.
 }
 
