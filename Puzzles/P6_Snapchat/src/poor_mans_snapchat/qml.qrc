@@ -6,6 +6,5 @@
         <file>../../img/crayon.png</file>
         <file>../../img/pen.png</file>
         <file>../../img/text.png</file>
-        <file>ColorPicker.qml</file>
     </qresource>
 </RCC>

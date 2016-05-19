@@ -1,6 +1,6 @@
 import QtQuick 2.6
 import QtQuick.Controls 1.5
-
+import QtQuick.Dialogs 1.2
 import QtMultimedia 5.6
 import QtQuick.Window 2.0
 import QtGraphicalEffects 1.0
@@ -16,7 +16,7 @@ ApplicationWindow {
     property int ypos
     property bool canPaint : false;
     property bool canText : false;
-    property alias textColor : txt_center.color
+    property alias textColor: ti_textArea.color
 
     Rectangle
     {
@@ -256,24 +256,6 @@ ApplicationWindow {
                 ti_textArea.text = "";
             }
         }
-
-        ColorPicker
-        {
-            id: picker
-            pickerVisible: false
-        }
-
-//        Rectangle
-//        {
-//            id: colorPicker
-//            visible: false
-//            z: 6
-//            width: 3*big_wrapper.width/4
-//            height: big_wrapper.height/4
-//            color: "light grey"
-//            anchors.horizontalCenter: big_wrapper.horizontalCenter
-//            anchors.verticalCenter: big_wrapper.verticalCenter
-//        }
 
         Audio
         {
