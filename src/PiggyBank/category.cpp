@@ -34,11 +34,11 @@ QString Category::getName()
     return m_name;
 }
 
-void Category::addItem(QString name, bool expense, int amount)
-{
-    Item * item = new Item(name, expense, amount);
-    m_items.push_back(item);
-}
+//void Category::addItem(QString name, bool expense, int amount)
+//{
+//    Item * item = new Item(date, name, expense, amount);
+//    m_items.push_back(item);
+//}
 
 void Category::removeItem(Item * item)
 {

@@ -38,51 +38,101 @@ Rectangle{
         anchors.bottom: budget_wrapper.bottom
     }
 
-    Rectangle{
-        id: budget_table
-        width: budget_wrapper.width
-        height: budget_wrapper.height
-        anchors.top: budget_title.bottom
-        anchors.topMargin: 15
-        anchors.leftMargin: 10
-        anchors.rightMargin: 10
-        anchors.horizontalCenter: budget_wrapper.horizontalCenter
-        ListModel{
-            id: budget_model
-            ListElement
-            {
-                name: "blah"
-                left: "blah"
+//    Rectangle{
+//        id: budget_table
+//        width: budget_wrapper.width
+//        anchors.top: budget_title.bottom
+//        anchors.topMargin: 15
+//        anchors.bottom: setup_btn.top
+//        anchors.leftMargin: 10
+//        anchors.rightMargin: 10
+//        anchors.horizontalCenter: budget_wrapper.horizontalCenter
 
-            }
-        }
-        Component
-        {
-            id: budget_delegate
-            Row
-            {
-                spacing: 15
-                Text
-                {
-                    text: "blah"
-                }
-                Text
-                {
-                    text: "blah"
-                }
-                Text
-                {
-                    text: "Blah"
-                }
-            }
-        }
-        ListView{
-            anchors.fill: parent
-            anchors.leftMargin: 20
-            model: budget_model
-            delegate: budget_delegate
-        }
-    }
+//        color: "light blue"
+//        ListModel{
+//            id: budget_model
+
+//            Component.onCompleted: {
+//                for (var i = 0; i < 24; i++) {
+//                    append(createListElement());
+//                }
+//            }
+//            function createListElement() {
+//                return {
+//                    hour: "01"
+//                };
+//            }
+//        }
+//        Component
+//        {
+//            id: budget_delegate
+//            Row
+//            {
+//                spacing: parent.width/3
+//                Text
+//                {
+//                    text: hour
+//                    anchors.centerIn: parent
+//                }
+//                Text
+//                {
+//                    text: "Purchase"
+//                    horizontalAlignment: Text.AlignHCenter
+//                }
+//                Text
+//                {
+//                    text: "Cost"
+//                    horizontalAlignment: Text.AlignHCenter
+//                }
+//            }
+//        }
+//        ListView{
+//            anchors.fill: parent
+//            anchors.leftMargin: 20
+//            model: budget_model
+//            delegate: budget_delegate
+//        }
+//    }
+    ListView {
+         id: listView
+         anchors.fill: parent
+         model: listModel
+         delegate: Rectangle {
+             width: listView.width
+             height: listView.height / 10
+
+             Text {
+                 text: date
+                 anchors.centerIn: parent
+             }
+             Text{
+                 text: purchase
+                 anchors.centerIn: parent
+             }
+             Text{
+                 text: cost
+                 anchors.centerIn: parent
+                 // set color to expense or not expense?
+             }
+         }
+     }
+
+     ListModel {
+         id: listModel
+
+         Component.onCompleted: {
+             for (var i = 0; i < TheBigBudget.getCount(); i++) {
+                 append(getListElements(i));
+             }
+         }
+
+         function getListElement(i) {
+             return {
+                //date: TheBigBudget.getItemAt(i).getDate()
+
+             };
+         }
+     }
 
     // need a way to list all current budgets. may need a control for that.
 }

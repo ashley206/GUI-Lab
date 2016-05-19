@@ -9,20 +9,24 @@ class Item
 
 public:
     Item();
-    Item(QString name, bool expense, int amount);
+    Item(QString date, QString name, bool expense, double amount);
     //Item & operator=(const Item & rhs);
     bool operator==(const Item & rhs);
+    //bool operator!=(const Item & rhs);
     void setName(QString name);
     QString getName();
-    void setAmount(int amount);
-    int getAmount();
+    void setDate(QString date);
+    QString getDate();
+    void setAmount(double amount);
+    double getAmount();
     bool isExpense();
     void setExpense(bool expense);
     ~Item();
 private:
+    QString m_date;
     QString m_name;
     bool m_isExpense = true;
-    int m_amount;
+    double m_amount;
 
 };
 

@@ -7,9 +7,10 @@ Item::Item()
     m_amount = 0;
 }
 
-Item::Item(QString name, bool expense, int amount)
+Item::Item(QString date, QString name, bool expense, double amount)
 {
     //m_name = new char[strlen(name) + 1];
+    m_date = date;
     m_name = name;
     //strcpy(m_name, name);
     m_isExpense = expense;
@@ -39,8 +40,15 @@ bool Item::operator==(const Item & rhs)
         &&
         (m_amount == rhs.m_amount)
         &&
-        (m_isExpense == rhs.m_isExpense));
+        (m_isExpense == rhs.m_isExpense)
+        &&
+        (m_date == rhs.m_date));
 }
+
+//bool Item::operator!=(const Item & rhs)
+//{
+//    return !(rhs == this);
+//}
 
 void Item::setName(QString name)
 {
@@ -52,12 +60,22 @@ QString Item::getName()
     return m_name;
 }
 
-void Item::setAmount(int amount)
+void Item::setDate(QString date)
+{
+    m_date = date;
+}
+
+QString Item::getDate()
+{
+    return m_date;
+}
+
+void Item::setAmount(double amount)
 {
     m_amount = amount;
 }
 
-int Item::getAmount()
+double Item::getAmount()
 {
     return m_amount;
 }
