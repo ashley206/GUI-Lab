@@ -8,6 +8,8 @@ Rectangle{
     color: "transparent"
     property alias back_mouseArea: add_item_title.back_btn_mouseArea
     property bool isExpense: expense_box.currentIndex === 0 ? false : true
+    signal itemAdded
+
     MyTitleBar{
         id: add_item_title
         title: "Add Item"
@@ -121,6 +123,8 @@ Rectangle{
 //            console.log(amount_tf.text)
             TheBigBudget.addItem(date, purchase_ti.text, isExpense, amount_tf.text);
             console.log(TheBigBudget.getCount());
+
+            itemAdded();
         }
     }
 }

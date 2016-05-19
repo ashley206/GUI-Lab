@@ -25,12 +25,17 @@ public slots:
     int getCount();
     void setBudget(double budget);
     double getBudget();
-
+    double getAmountSpent();
+    double getRemainingBudget();
     void addItem(QString date, QString name, bool expense, double amnt);
     void removeItem(Item * item);
     void editItem(Item item, QString name, bool expense, double amount);
 
     Item * getItemAt(int i);
+
+    double getItemAmount(int i);
+    QString getItemPurchase(int i);
+    QString getItemDate(int i);
 
     //void addCategory(QString name);
     //void removeCategory(Category * c);

@@ -78,6 +78,30 @@ Window {
             addItem_screen.visible = false;
             add_screen.visible = true;
         }
+        onItemAdded: {
+            var date = TheBigBudget.getItemDate(TheBigBudget.getCount() - 1)
+            var purchase = TheBigBudget.getItemPurchase(TheBigBudget.getCount() - 1)
+            var amount = TheBigBudget.getItemAmount(TheBigBudget.getCount() - 1)
+            budget_screen.newItem.append({ "date":date, "purchase":purchase, "amount":amount });
+            function getDate(i) {
+                return {
+                    date: TheBigBudget.getItemDate(i)
+                };
+            }
+
+            function getPurchase(i) {
+                return {
+                    purchase: TheBigBudget.getItemPurchase(i)
+                };
+            }
+
+            function getAmount(i) {
+                return {
+                    amount: TheBigBudget.getItemAmount(i)
+                };
+            }
+
+        }
     }
 //    AddCategoryScreen{
 //        id: addCategory_screen

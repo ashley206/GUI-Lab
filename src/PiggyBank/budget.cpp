@@ -19,10 +19,42 @@ double Budget::getBudget()
     return m_budget;
 }
 
+double Budget::getAmountSpent()
+{
+    int total = 0;
+    for(int i = 0; i < m_count; i++)
+    {
+        total += m_items[i]->getAmount();
+    }
+    return total;
+}
+
+double Budget::getRemainingBudget()
+{
+    return m_budget - getAmountSpent();
+}
+
 Item * Budget::getItemAt(int i)
 {
     return m_items.at(i);
 }
+
+double Budget::getItemAmount(int i)
+{
+    return getItemAt(i)->getAmount();
+}
+
+QString Budget::getItemPurchase(int i)
+{
+    return getItemAt(i)->getName();
+}
+
+QString Budget::getItemDate(int i)
+{
+    return getItemAt(i)->getDate();
+}
+
+
 
 void Budget::addItem(QString date, QString name, bool expense, double amnt)
 {

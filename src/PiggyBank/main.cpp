@@ -9,6 +9,7 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
+
     QCoreApplication::setApplicationName("PiggyBank");
     QCoreApplication::setOrganizationName("HelpfulStuff");
     QCoreApplication::setOrganizationDomain(".com");
