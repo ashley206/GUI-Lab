@@ -60,10 +60,10 @@ Window {
             budget_screen.visible = true;
             add_screen.visible = false;
         }
-        addCategory_mouseArea.onClicked: {
-            add_screen.visible = false;
-            addCategory_screen.visible = true;
-        }
+//        addCategory_mouseArea.onClicked: {
+//            add_screen.visible = false;
+//            addCategory_screen.visible = true;
+//        }
         addItem_mouseArea.onClicked: {
             add_screen.visible = false;
             addItem_screen.visible = true;
@@ -79,15 +79,15 @@ Window {
             add_screen.visible = true;
         }
     }
-    AddCategoryScreen{
-        id: addCategory_screen
-        visible: false
-        anchors.fill: parent
-        back_mouseArea.onClicked: {
-            addCategory_screen.visible = false;
-            add_screen.visible = true;
-        }
-    }
+//    AddCategoryScreen{
+//        id: addCategory_screen
+//        visible: false
+//        anchors.fill: parent
+//        back_mouseArea.onClicked: {
+//            addCategory_screen.visible = false;
+//            add_screen.visible = true;
+//        }
+//    }
     MySetupScreen{
         id: setup_screen
         visible: false

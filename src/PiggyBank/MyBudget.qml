@@ -93,46 +93,46 @@ Rectangle{
 //            delegate: budget_delegate
 //        }
 //    }
-    ListView {
-         id: listView
-         anchors.fill: parent
-         model: listModel
-         delegate: Rectangle {
-             width: listView.width
-             height: listView.height / 10
+//    ListView {
+//         id: listView
+//         anchors.fill: parent
+//         model: listModel
+//         delegate: Rectangle {
+//             width: listView.width
+//             height: listView.height / 10
 
-             Text {
-                 text: date
-                 anchors.centerIn: parent
-             }
-             Text{
-                 text: purchase
-                 anchors.centerIn: parent
-             }
-             Text{
-                 text: cost
-                 anchors.centerIn: parent
-                 // set color to expense or not expense?
-             }
-         }
-     }
+//             Text {
+//                 text: date
+//                 anchors.centerIn: parent
+//             }
+//             Text{
+//                 text: purchase
+//                 anchors.centerIn: parent
+//             }
+//             Text{
+//                 text: cost
+//                 anchors.centerIn: parent
+//                 // set color to expense or not expense?
+//             }
+//         }
+//     }
 
-     ListModel {
-         id: listModel
+//     ListModel {
+//         id: listModel
 
-         Component.onCompleted: {
-             for (var i = 0; i < TheBigBudget.getCount(); i++) {
-                 append(getListElements(i));
-             }
-         }
+//         Component.onCompleted: {
+//             for (var i = 0; i < TheBigBudget.getCount(); i++) {
+//                 append(getListElements(i));
+//             }
+//         }
 
-         function getListElement(i) {
-             return {
-                //date: TheBigBudget.getItemAt(i).getDate()
+//         function getListElement(i) {
+//             return {
+//                //date: TheBigBudget.getItemAt(i).getDate()
 
-             };
-         }
-     }
+//             };
+//         }
+//     }
 
     // need a way to list all current budgets. may need a control for that.
 }
