@@ -6,7 +6,7 @@ Rectangle{
 
     property alias title_x: title.x
     //property alias subtitle_x: subtitle.x
-    property alias settings_mouseArea: settings_btn.mouseArea
+    //property alias settings_mouseArea: settings_btn.mouseArea
     property alias budget_mouseArea: budget_btn.mouseArea
     property alias text: title.text
 
@@ -53,23 +53,23 @@ Rectangle{
         textColor: "white"
         //color: "#51c460"
         fontSize: 12
-        anchors.bottom: settings_btn.top
-        anchors.bottomMargin: 10
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 30
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
-    MyButton{
-        id: settings_btn
-        text: "Settings"
-        height: parent.height/10
-        width: 9*(parent.width/10)
-        textColor: "white"
-        //color: "#51c460"
-        fontSize: 12
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 10
-        anchors.horizontalCenter: parent.horizontalCenter
-    }
+//    MyButton{
+//        id: settings_btn
+//        text: "Settings"
+//        height: parent.height/10
+//        width: 9*(parent.width/10)
+//        textColor: "white"
+//        //color: "#51c460"
+//        fontSize: 12
+//        anchors.bottom: parent.bottom
+//        anchors.bottomMargin: 10
+//        anchors.horizontalCenter: parent.horizontalCenter
+//    }
 }
 
 

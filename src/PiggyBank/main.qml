@@ -22,11 +22,11 @@ Window {
         id: splash_screen
         visible: true
         anchors.fill: parent
-        settings_mouseArea.onClicked: {
-            splash_screen.visible = false;
-            settings_screen.visible = true;
+//        settings_mouseArea.onClicked: {
+//            splash_screen.visible = false;
+//            settings_screen.visible = true;
 
-        }
+//        }
         budget_mouseArea.onClicked: {
             splash_screen.visible = false;
             budget_screen.visible = true;
@@ -50,7 +50,8 @@ Window {
         setup_mouseArea.onClicked: {
             console.log("halp")
             budget_screen.visible = false;
-            setup_screen.visible = true;
+            //setup_screen.visible = true;
+            settings_screen.visible = true;
         }
     }
 
@@ -123,11 +124,11 @@ Window {
             setup_screen.visible = false;
             budget_screen.visible = true;
         }
-        onBudgetSet: {
-            // Update the budget/remaining budget
-            budget_screen.totalBudget = enteredBudget;
-            budget_screen.remainingBudget = TheBigBudget.getRemainingBudget();
-        }
+//        onBudgetSet: {
+//            // Update the budget/remaining budget
+//            budget_screen.totalBudget = enteredBudget;
+//            budget_screen.remainingBudget = TheBigBudget.getRemainingBudget();
+//        }
     }
 
     MySettings{
@@ -135,8 +136,13 @@ Window {
         visible: false
         anchors.fill: parent
         back_mouseArea.onClicked: {
-            splash_screen.visible = true;
+            budget_screen.visible = true;
             settings_screen.visible = false;
+        }
+        onBudgetSet: {
+            // Update the budget/remaining budget
+            budget_screen.totalBudget = enteredBudget;
+            budget_screen.remainingBudget = TheBigBudget.getRemainingBudget();
         }
     }
 

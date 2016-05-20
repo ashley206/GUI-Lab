@@ -22,6 +22,8 @@ Rectangle{
         font.pointSize: 11
         anchors.top: setup_title.bottom
         anchors.topMargin: 15
+        anchors.left: setup_wrapper.left
+        anchors.leftMargin: 10
     }
 
     TextField{
@@ -38,7 +40,6 @@ Rectangle{
             bottom: 0.00
             notation: "StandardNotation"
             decimals: 2
-
         }
     }
 

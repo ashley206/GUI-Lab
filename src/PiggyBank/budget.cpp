@@ -25,7 +25,7 @@ double Budget::getAmountSpent()
     for(int i = 0; i < m_count; i++)
     {
         // If an expense, add to total spend. Else, "saved".
-        total += m_items[i]->getAmount();
+        total -= m_items[i]->getAmount();
     }
     return total;
 }

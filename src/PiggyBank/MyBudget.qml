@@ -148,6 +148,7 @@ Rectangle{
                         anchors.centerIn: parent
                     }
                 }
+
             }
         }
         ListView{
