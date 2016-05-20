@@ -23,11 +23,21 @@ Rectangle{
         id: settings_btn
         height: budget_title.titleHeight
         width: budget_title.titleHeight
-        text: "Settings"
+        //text: "Settings"
         textColor: budget_title.textColor
         anchors.right: budget_title.right
         anchors.top: budget_title.top
-        color: budget_title.color
+        anchors.verticalCenter: budget_title.verticalCenter
+        color: "transparent"
+        Image{
+            z: 5
+            anchors.centerIn: settings_btn
+            id: settings_icon
+            height: budget_title.titleHeight - 15
+            width: height
+            source: "/../../img/ic_settings_white_48dp.png"
+        }
+
     }
 
     Text{
@@ -57,6 +67,7 @@ Rectangle{
         anchors.horizontalCenter: budget_wrapper.horizontalCenter
         anchors.bottom: budget_wrapper.bottom
         anchors.bottomMargin: 10
+
     }
 
     Rectangle{

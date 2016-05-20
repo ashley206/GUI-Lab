@@ -31,12 +31,21 @@ Rectangle{
         id: back_btn
         visible: true
         // eventually want an image here
-        text: "Back"
+        //text: "Back"
         textColor: title_txt.color
         anchors.top: bar_rect.top
         anchors.left: bar_rect.left
         width: bar_rect.height
         height: bar_rect.height
-        color: bar_rect.color
+        color: "transparent"
+        Image{
+            z: 5
+            anchors.centerIn: back_btn
+            id: back_icon
+            height: back_btn.height - 15
+            source: "/../../img/ic_keyboard_arrow_left_white_48dp.png"
+            width: height
+
+        }
     }
 }

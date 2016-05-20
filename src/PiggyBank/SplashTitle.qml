@@ -44,6 +44,7 @@ Rectangle{
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
+
     MyButton{
         id: budget_btn
         text: "Let's Get Budgeting!"
