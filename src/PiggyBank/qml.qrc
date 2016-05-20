@@ -11,8 +11,6 @@
         <file>MyBudget.qml</file>
         <file>MyAddScreen.qml</file>
         <file>AddItemScreen.qml</file>
-        <file>AddCategoryScreen.qml</file>
-        <file>MySetupScreen.qml</file>
         <file>../../img/ic_settings_white_36dp.png</file>
         <file>../../img/ic_settings_white_24dp.png</file>
         <file>../../img/ic_settings_white_48dp.png</file>

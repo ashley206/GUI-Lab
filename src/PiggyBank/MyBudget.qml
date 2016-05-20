@@ -37,17 +37,18 @@ Rectangle{
             width: height
             source: "/../../img/ic_settings_white_48dp.png"
         }
-
     }
 
     Text{
         id: remaining_txt
-        text: "You have "
+        text: "You have $"
               + remainingBudget
-              + " left of "
-              + totalBudget;
+              + " left of your $"
+              + totalBudget
+              + " budget!";
         color: "black"
         font.pointSize: 14
+        font.family: "Raleway"
         anchors.horizontalCenter: budget_wrapper.horizontalCenter
         anchors.top: budget_title.bottom
         anchors.topMargin: 15
@@ -56,8 +57,8 @@ Rectangle{
 
     MyButton{
         id: add_btn
-        height: 100
-        width: 100
+        height: 90
+        width: 90
         //color: budget_title.color
         radius: 2000
         text: "+"
@@ -76,8 +77,11 @@ Rectangle{
         anchors.top: remaining_txt.bottom
         anchors.topMargin: 15
         anchors.bottom: add_btn.top
+        anchors.bottomMargin: 5
         anchors.horizontalCenter: budget_wrapper.horizontalCenter
         color: "transparent"
+        border.width: 1
+        border.color: "light grey"
         Component.onCompleted: {
             for (var i = 0; i < TheBigBudget.getCount(); i++) {
                 budget_model.append({ "date":getDate(i), "purchase":getPurchase(i), "amount":getAmount(i) });
@@ -85,19 +89,13 @@ Rectangle{
         }
 
         function getDate(i) {
-            return {
-                date: TheBigBudget.getItemDate(i)
-            };
+            return {date: TheBigBudget.getItemDate(i)};
         }
         function getPurchase(i) {
-            return {
-                purchase: TheBigBudget.getItemPurchase(i)
-            };
+            return {purchase: TheBigBudget.getItemPurchase(i)};
         }
         function getAmount(i) {
-            return {
-                amount: TheBigBudget.getItemAmount(i)
-            };
+            return {amount: TheBigBudget.getItemAmount(i)};
         }
 
 
@@ -107,8 +105,22 @@ Rectangle{
         Component
         {
             id: budget_delegate
+
+
             Row
             {
+//                Rectangle{
+//                    height: 50
+//                    width: budget_table.width
+//                    color: "#A7FFEB"
+//                    z: -1
+//                    Text{
+//                        text: "Food"
+//                        color: "black"
+//                        font.pointSize: 10
+//                        anchors.centerIn: parent
+//                    }
+//                }
                 Rectangle{
                     height: 50
                     width: budget_table.width/3

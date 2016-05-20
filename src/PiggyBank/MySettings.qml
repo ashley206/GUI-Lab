@@ -15,7 +15,7 @@ Rectangle{
         id: settings_global
         property alias colorblind: colorblind_switch.checked
         property alias currency: currency_box.currentIndex
-        property variant enteredBudget: budget_tf.text
+       //property int enteredBudget: 0
 
     }
 
@@ -58,6 +58,7 @@ Rectangle{
         id: setup_save
         text: "Save Changes"
         textColor: "white"
+        fontSize: 14
         //color: setup_title.color
         height: parent.height/10
         width: 9*(parent.width/10)
@@ -68,7 +69,7 @@ Rectangle{
             enteredBudget = budget_tf.text;
             TheBigBudget.setBudget(enteredBudget);
             console.log("Set the budget to: ", TheBigBudget.getBudget());
-
+            budget_tf.text = "";    //clear the text
             budgetSet();
         }
     }
@@ -112,7 +113,7 @@ Rectangle{
             ListElement{ text: "EUR"; }
         }
         // On accepted, change setting?
-        width: 2*(parent.width/3)
+        width: parent.width/5
         anchors.top: currency_txt.bottom
         anchors.topMargin: 10
         anchors.horizontalCenter: parent.horizontalCenter

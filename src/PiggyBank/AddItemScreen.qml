@@ -10,6 +10,7 @@ Rectangle{
     property bool isExpense: expense_box.currentIndex === 0 ? true : false
     signal itemAdded
 
+
     MyTitleBar{
         id: add_item_title
         title: "Add Item"
@@ -17,11 +18,42 @@ Rectangle{
     }
 
     Text{
+        id: category_txt
+        text: "What category?"
+        font.pointSize: 11
+        color: "black"
+        anchors.top: add_item_title.bottom
+        anchors.topMargin: 15
+        anchors.left: add_item_wrapper.left
+        anchors.leftMargin: 10
+    }
+
+    ComboBox{
+        id: category_box
+        editable: false
+        anchors.top: category_txt.bottom
+        anchors.topMargin:5
+        anchors.left: add_item_wrapper.left
+        anchors.leftMargin: 20
+
+        width: parent.width/3
+        model: ListModel{
+            id: category_model
+            ListElement{ text: "Rent"; }
+            ListElement{ text: "Utilities"; }
+            ListElement{ text: "Groceries"; }
+            ListElement{ text: "Eating Out"; }
+            ListElement{ text: "Clothing"; }
+            ListElement{ text: "Gas"; }
+        }
+    }
+
+    Text{
         id: expense_txt
         text: "What kind of purchase?"
         font.pointSize: 11
         color: "black"
-        anchors.top: add_item_title.bottom
+        anchors.top: category_box.bottom
         anchors.topMargin: 15
         anchors.left: add_item_wrapper.left
         anchors.leftMargin: 10
@@ -40,9 +72,6 @@ Rectangle{
             id: expense_model
             ListElement{ text: "Expense"; }
             ListElement{ text: "Income"; }
-        }
-        onAccepted: {
-
         }
     }
 
@@ -98,6 +127,8 @@ Rectangle{
     MyButton{
         id: done_btn
         text: "Submit"
+        fontSize: 14
+        textColor: "white"
         height: parent.height/10
         width: 2*parent.width/3
         anchors.top: amount_tf.bottom
@@ -106,6 +137,7 @@ Rectangle{
         color: add_item_title.color
         mouseArea.onClicked: {
             if(amount_tf.text > 0){
+                var category = category_box.currentText;
                 var date = new Date();
                 var dd = date.getDate();
                 var mm = date.getMonth()+1; //January is 0!
@@ -121,16 +153,13 @@ Rectangle{
                 // If it's an expense, make it negative
                 if(isExpense)
                     amount_tf.text = '-' + amount_tf.text;
-                //            console.log(date)
-                //            console.log(purchase_ti.text)
-                //            console.log(isExpense)
+//                else
+//                    category = "Income";
                 console.log(amount_tf.text)
                 TheBigBudget.addItem(date,
                                      purchase_ti.text,
                                      isExpense,
                                      amount_tf.text);
-                //            console.log(isExpense);
-                //            console.log(amount_tf.text);
                 amount_tf.text = "";
                 itemAdded();
             }

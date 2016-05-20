@@ -43,12 +43,10 @@ Window {
             budget_screen.visible = false;
         }
         add_mouseArea.onClicked: {
-            console.log("halp less")
             budget_screen.visible = false;
             add_screen.visible = true;
         }
         setup_mouseArea.onClicked: {
-            console.log("halp")
             budget_screen.visible = false;
             //setup_screen.visible = true;
             settings_screen.visible = true;
@@ -63,10 +61,6 @@ Window {
             budget_screen.visible = true;
             add_screen.visible = false;
         }
-//        addCategory_mouseArea.onClicked: {
-//            add_screen.visible = false;
-//            addCategory_screen.visible = true;
-//        }
         addItem_mouseArea.onClicked: {
             add_screen.visible = false;
             addItem_screen.visible = true;
@@ -87,49 +81,22 @@ Window {
             var amount = TheBigBudget.getItemAmount(TheBigBudget.getCount() - 1)
             budget_screen.newItem.append({ "date":date, "purchase":purchase, "amount":amount });
             function getDate(i) {
-                return {
-                    date: TheBigBudget.getItemDate(i)
-                };
+                return {date: TheBigBudget.getItemDate(i)};
             }
 
             function getPurchase(i) {
-                return {
-                    purchase: TheBigBudget.getItemPurchase(i)
-                };
+                return {purchase: TheBigBudget.getItemPurchase(i)};
             }
 
             function getAmount(i) {
-                return {
-                    amount: TheBigBudget.getItemAmount(i)
-                };
+                return {amount: TheBigBudget.getItemAmount(i)};
             }
             // Update remaining budget.
             budget_screen.remainingBudget = TheBigBudget.getRemainingBudget()
+        }
+    }
 
-        }
-    }
-//    AddCategoryScreen{
-//        id: addCategory_screen
-//        visible: false
-//        anchors.fill: parent
-//        back_mouseArea.onClicked: {
-//            addCategory_screen.visible = false;
-//            add_screen.visible = true;
-//        }
-//    }
-    MySetupScreen{
-        id: setup_screen
-        visible: false
-        back_mouseArea.onClicked:{
-            setup_screen.visible = false;
-            budget_screen.visible = true;
-        }
-//        onBudgetSet: {
-//            // Update the budget/remaining budget
-//            budget_screen.totalBudget = enteredBudget;
-//            budget_screen.remainingBudget = TheBigBudget.getRemainingBudget();
-//        }
-    }
+
 
     MySettings{
         id: settings_screen

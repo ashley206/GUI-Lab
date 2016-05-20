@@ -48,11 +48,11 @@ Rectangle{
     MyButton{
         id: budget_btn
         text: "Let's Get Budgeting!"
-        height: parent.height/10
+        height: 1.5*parent.height/10
         width: 9*(parent.width/10)
         textColor: "white"
         //color: "#51c460"
-        fontSize: 12
+        fontSize: 16
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 30
         anchors.horizontalCenter: parent.horizontalCenter

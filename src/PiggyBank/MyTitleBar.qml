@@ -22,6 +22,7 @@ Rectangle{
         anchors.centerIn: bar_rect
         width: parent.width
         horizontalAlignment: Text.AlignHCenter
+        font.family: "Raleway Medium"
         font.pointSize: 20
         color: "white"
     }
