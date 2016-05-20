@@ -24,7 +24,7 @@ Rectangle{
         height: budget_title.titleHeight
         width: budget_title.titleHeight
         text: "Settings"
-        textColor: "white"
+        textColor: budget_title.textColor
         anchors.right: budget_title.right
         anchors.top: budget_title.top
         color: budget_title.color
@@ -46,15 +46,17 @@ Rectangle{
 
     MyButton{
         id: add_btn
-        height: budget_wrapper.height/6
-        width: budget_wrapper.width/3
-        color: budget_title.color
+        height: 100
+        width: 100
+        //color: budget_title.color
+        radius: 2000
         text: "+"
         // wrap mode??
-        fontSize: 14
+        fontSize: 36
         textColor: "white"
         anchors.horizontalCenter: budget_wrapper.horizontalCenter
         anchors.bottom: budget_wrapper.bottom
+        anchors.bottomMargin: 10
     }
 
     Rectangle{
@@ -99,7 +101,7 @@ Rectangle{
                 Rectangle{
                     height: 50
                     width: budget_table.width/3
-                    color: "light grey"
+                    color: TheBigBudget.getCount() % 2  === 0 ? "#F5F5F5" : "#E0E0E0"
                     z: -1
                     Text
                     {
@@ -112,7 +114,7 @@ Rectangle{
                 Rectangle{
                     height: 50
                     width: budget_table.width/3
-                    color: "light grey"
+                    color: TheBigBudget.getCount() % 2  === 0 ? "#F5F5F5" : "#E0E0E0"
                     z: -1
                     Text
                     {
@@ -125,7 +127,7 @@ Rectangle{
                 Rectangle{
                     height: 50
                     width: budget_table.width/3
-                    color: "light grey"
+                    color: TheBigBudget.getCount() % 2  === 0 ? "#F5F5F5" : "#E0E0E0"
                     z: -1
                     Text
                     {

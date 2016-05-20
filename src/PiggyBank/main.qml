@@ -16,7 +16,7 @@ Window {
     height: 640
 
     title: qsTr("PiggyBank")
-
+    //color: "#FAFAFA"      // TODO: Need logo to be transparent
 
     SplashTitle{
         id: splash_screen

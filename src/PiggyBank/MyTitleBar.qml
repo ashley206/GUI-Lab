@@ -3,6 +3,7 @@ import QtQuick 2.0
 Rectangle{
 
     property alias title: title_txt.text
+    property alias textColor: title_txt.color
     property alias titleHeight: bar_rect.height
     property alias titleBottom: bar_rect.bottom
     property alias back_visible: back_btn.visible
@@ -11,7 +12,8 @@ Rectangle{
     id: bar_rect
     width: parent.width
     height: parent.width/8
-    color: "#1EAF64"
+    color: "#1DE9B6"
+//    "#1EAF64"
     anchors.top: parent.top
 
     Text{
@@ -30,7 +32,7 @@ Rectangle{
         visible: true
         // eventually want an image here
         text: "Back"
-        textColor: "white"
+        textColor: title_txt.color
         anchors.top: bar_rect.top
         anchors.left: bar_rect.left
         width: bar_rect.height

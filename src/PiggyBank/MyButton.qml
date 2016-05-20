@@ -10,11 +10,16 @@ Rectangle
     property alias text: buttonText.text
     property alias fontSize: buttonText.font.pointSize
     property alias textColor: buttonText.color
-
+    property alias btnColor: button.color
+    property alias radius: button.radius
     id: button
+
+    color: "#FBC02D"
+    radius: 5
 
     Text{
         id: buttonText
+        font.family: "Raleway Medium"
         anchors.centerIn: parent
         wrapMode: Text.WordWrap
     }
