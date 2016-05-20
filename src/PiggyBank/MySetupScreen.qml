@@ -7,6 +7,8 @@ Rectangle{
     color: "transparent"
 
     property alias back_mouseArea: setup_title.back_btn_mouseArea
+    property int enteredBudget: 0
+    signal budgetSet
 
     MyTitleBar{
         id: setup_title
@@ -51,8 +53,11 @@ Rectangle{
         anchors.bottomMargin: 10
         anchors.horizontalCenter: parent.horizontalCenter
         mouseArea.onClicked: {
-            TheBigBudget.setBudget(budget_tf.text);
+            enteredBudget = budget_tf.text;
+            TheBigBudget.setBudget(enteredBudget);
             console.log("Set the budget to: ", TheBigBudget.getBudget());
+
+            budgetSet();
         }
     }
 }

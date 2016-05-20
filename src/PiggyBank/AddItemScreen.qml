@@ -7,7 +7,7 @@ Rectangle{
     anchors.fill: parent
     color: "transparent"
     property alias back_mouseArea: add_item_title.back_btn_mouseArea
-    property bool isExpense: expense_box.currentIndex === 0 ? false : true
+    property bool isExpense: expense_box.currentIndex === 0 ? true : false
     signal itemAdded
 
     MyTitleBar{
@@ -38,8 +38,8 @@ Rectangle{
         width: parent.width/3
         model: ListModel{
             id: expense_model
-            ListElement{ text: "Income"; }
             ListElement{ text: "Expense"; }
+            ListElement{ text: "Income"; }
         }
         onAccepted: {
 
@@ -82,6 +82,7 @@ Rectangle{
         height: amount_txt.height
         width: 9*(parent.width/10)
         placeholderText: "Enter amount"
+        text: ""
         anchors.top: amount_txt.bottom
         anchors.topMargin: 10
         anchors.horizontalCenter: parent.horizontalCenter
@@ -104,27 +105,35 @@ Rectangle{
         anchors.horizontalCenter: parent.horizontalCenter
         color: add_item_title.color
         mouseArea.onClicked: {
-            var date = new Date();
-            var dd = date.getDate();
-            var mm = date.getMonth()+1; //January is 0!
-            var yyyy = date.getFullYear();
+            if(amount_tf.text > 0){
+                var date = new Date();
+                var dd = date.getDate();
+                var mm = date.getMonth()+1; //January is 0!
+                var yyyy = date.getFullYear();
+                if(dd<10) {
+                    dd='0'+dd
+                }
+                if(mm<10) {
+                    mm='0'+mm
+                }
+                date = mm+'/'+dd+'/'+yyyy;
 
-            if(dd<10) {
-                dd='0'+dd
+                // If it's an expense, make it negative
+                if(isExpense)
+                    amount_tf.text = '-' + amount_tf.text;
+                //            console.log(date)
+                //            console.log(purchase_ti.text)
+                //            console.log(isExpense)
+                console.log(amount_tf.text)
+                TheBigBudget.addItem(date,
+                                     purchase_ti.text,
+                                     isExpense,
+                                     amount_tf.text);
+                //            console.log(isExpense);
+                //            console.log(amount_tf.text);
+                amount_tf.text = "";
+                itemAdded();
             }
-            if(mm<10) {
-                mm='0'+mm
-            }
-            date = mm+'/'+dd+'/'+yyyy;
-
-//            console.log(date)
-//            console.log(purchase_ti.text)
-//            console.log(isExpense)
-//            console.log(amount_tf.text)
-            TheBigBudget.addItem(date, purchase_ti.text, isExpense, amount_tf.text);
-            console.log(TheBigBudget.getCount());
-
-            itemAdded();
         }
     }
 }

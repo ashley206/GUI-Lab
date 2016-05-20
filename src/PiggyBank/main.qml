@@ -43,10 +43,12 @@ Window {
             budget_screen.visible = false;
         }
         add_mouseArea.onClicked: {
+            console.log("halp less")
             budget_screen.visible = false;
             add_screen.visible = true;
         }
         setup_mouseArea.onClicked: {
+            console.log("halp")
             budget_screen.visible = false;
             setup_screen.visible = true;
         }
@@ -100,6 +102,8 @@ Window {
                     amount: TheBigBudget.getItemAmount(i)
                 };
             }
+            // Update remaining budget.
+            budget_screen.remainingBudget = TheBigBudget.getRemainingBudget()
 
         }
     }
@@ -118,6 +122,11 @@ Window {
         back_mouseArea.onClicked:{
             setup_screen.visible = false;
             budget_screen.visible = true;
+        }
+        onBudgetSet: {
+            // Update the budget/remaining budget
+            budget_screen.totalBudget = enteredBudget;
+            budget_screen.remainingBudget = TheBigBudget.getRemainingBudget();
         }
     }
 
