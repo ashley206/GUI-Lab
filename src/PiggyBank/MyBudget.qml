@@ -7,6 +7,7 @@ Rectangle{
 
     property alias back_mouseArea: budget_title.back_btn_mouseArea
     property alias setup_mouseArea: settings_btn.mouseArea
+    property alias categories_mouseArea: categories_btn.mouseArea
     property alias add_mouseArea: add_btn.mouseArea
     property int remainingBudget: TheBigBudget.getRemainingBudget()
     property int totalBudget: 0
@@ -71,6 +72,17 @@ Rectangle{
 
     }
 
+    MyButton{
+        id: categories_btn
+        height: add_btn.height/2
+        width: 100
+        anchors.verticalCenter: add_btn.verticalCenter
+        text: "Categories"
+        textColor: "white"
+        anchors.left: add_btn.right
+        anchors.leftMargin: 25
+    }
+
     Rectangle{
         id: budget_table
         width: budget_wrapper.width - 20
@@ -109,18 +121,6 @@ Rectangle{
 
             Row
             {
-//                Rectangle{
-//                    height: 50
-//                    width: budget_table.width
-//                    color: "#A7FFEB"
-//                    z: -1
-//                    Text{
-//                        text: "Food"
-//                        color: "black"
-//                        font.pointSize: 10
-//                        anchors.centerIn: parent
-//                    }
-//                }
                 Rectangle{
                     height: 50
                     width: budget_table.width/3

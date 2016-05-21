@@ -22,11 +22,6 @@ Window {
         id: splash_screen
         visible: true
         anchors.fill: parent
-//        settings_mouseArea.onClicked: {
-//            splash_screen.visible = false;
-//            settings_screen.visible = true;
-
-//        }
         budget_mouseArea.onClicked: {
             splash_screen.visible = false;
             budget_screen.visible = true;
@@ -50,6 +45,10 @@ Window {
             budget_screen.visible = false;
             //setup_screen.visible = true;
             settings_screen.visible = true;
+        }
+        categories_mouseArea.onClicked: {
+            budget_screen.visible = false;
+            categories_screen.visible = true;
         }
     }
 
@@ -79,7 +78,10 @@ Window {
             var date = TheBigBudget.getItemDate(TheBigBudget.getCount() - 1)
             var purchase = TheBigBudget.getItemPurchase(TheBigBudget.getCount() - 1)
             var amount = TheBigBudget.getItemAmount(TheBigBudget.getCount() - 1)
+            var category = TheBigBudget.getItemCategory(TheBigBudget.getCount() - 1)
             budget_screen.newItem.append({ "date":date, "purchase":purchase, "amount":amount });
+            if(category === "Rent")
+                categories_screen.newRentItem.append({ "date":date, "purchase":purchase, "amount":amount });
             function getDate(i) {
                 return {date: TheBigBudget.getItemDate(i)};
             }
@@ -91,6 +93,8 @@ Window {
             function getAmount(i) {
                 return {amount: TheBigBudget.getItemAmount(i)};
             }
+
+
             // Update remaining budget.
             budget_screen.remainingBudget = TheBigBudget.getRemainingBudget()
         }
@@ -110,6 +114,16 @@ Window {
             // Update the budget/remaining budget
             budget_screen.totalBudget = enteredBudget;
             budget_screen.remainingBudget = TheBigBudget.getRemainingBudget();
+        }
+    }
+
+    MyCategories{
+        id: categories_screen
+        visible: false
+        anchors.fill: parent
+        back_mouseArea.onClicked: {
+            budget_screen.visible = true;
+            categories_screen.visible = false;
         }
     }
 

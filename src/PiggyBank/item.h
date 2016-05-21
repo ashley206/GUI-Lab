@@ -9,7 +9,7 @@ class Item
 
 public:
     Item();
-    Item(QString date, QString name, bool expense, double amount);
+    Item(QString date, QString name, bool expense, double amount, QString category);
     //Item & operator=(const Item & rhs);
     bool operator==(const Item & rhs);
     //bool operator!=(const Item & rhs);
@@ -21,12 +21,15 @@ public:
     double getAmount();
     bool isExpense();
     void setExpense(bool expense);
+    void setCategory(QString category);
+    QString getCategory();
     ~Item();
 private:
     QString m_date;
     QString m_name;
     bool m_isExpense = true;
     double m_amount;
+    QString m_category;
 
 };
 

@@ -50,6 +50,11 @@ QString Budget::getItemPurchase(int i)
     return getItemAt(i)->getName();
 }
 
+QString Budget::getItemCategory(int i)
+{
+    return getItemAt(i)->getCategory();
+}
+
 QString Budget::getItemDate(int i)
 {
     return getItemAt(i)->getDate();
@@ -57,9 +62,9 @@ QString Budget::getItemDate(int i)
 
 
 
-void Budget::addItem(QString date, QString name, bool expense, double amnt)
+void Budget::addItem(QString date, QString name, bool expense, double amnt, QString category)
 {
-    Item * item = new Item(date, name, expense, amnt);
+    Item * item = new Item(date, name, expense, amnt, category);
     m_items.push_back(item);
     m_count++;
 }
@@ -74,11 +79,12 @@ void Budget::removeItem(Item * item)
 //    }
 }
 
-void Budget::editItem(Item item, QString name, bool expense, double amount)
+void Budget::editItem(Item item, QString name, bool expense, double amount, QString category)
 {
     item.setName(name);
     item.setExpense(expense);
     item.setAmount(amount);
+    item.setCategory(category);
 }
 
 //void Budget::addCategory(QString name)
