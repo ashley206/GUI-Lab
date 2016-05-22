@@ -9,8 +9,8 @@ Rectangle{
     property alias setup_mouseArea: settings_btn.mouseArea
     property alias categories_mouseArea: categories_btn.mouseArea
     property alias add_mouseArea: add_btn.mouseArea
-    property int remainingBudget: TheBigBudget.getRemainingBudget()
-    property int totalBudget: 0
+    property double remainingBudget: TheBigBudget.getRemainingBudget()
+    property double totalBudget: 0
 
     property alias newItem: budget_model
 
@@ -40,21 +40,32 @@ Rectangle{
         }
     }
 
-    Text{
-        id: remaining_txt
-        text: "You have $"
-              + remainingBudget
-              + " left of your $"
-              + totalBudget
-              + " budget!";
-        color: "black"
-        font.pointSize: 14
-        font.family: "Raleway"
+    Rectangle{
+        id: remaining_wrapper
+        color: "transparent"
+        height: budget_wrapper.height/10
+        width: 9.5*budget_wrapper.width/10
         anchors.horizontalCenter: budget_wrapper.horizontalCenter
         anchors.top: budget_title.bottom
         anchors.topMargin: 15
+        Text{
+            id: remaining_txt
+            width: parent.width
+            text: "You have $"
+                  + remainingBudget
+                  + " left of your $"
+                  + totalBudget
+                  + " budget!";
+            color: "black"
+            font.pointSize: 14
+            font.family: "Raleway"
+            horizontalAlignment: Text.AlignHCenter
+            wrapMode: Text.WordWrap
 
+        }
     }
+
+
 
     MyButton{
         id: add_btn
@@ -79,6 +90,7 @@ Rectangle{
         anchors.verticalCenter: add_btn.verticalCenter
         text: "Categories"
         textColor: "white"
+        fontSize: 11
         anchors.left: add_btn.right
         anchors.leftMargin: 25
     }
@@ -86,7 +98,7 @@ Rectangle{
     Rectangle{
         id: budget_table
         width: budget_wrapper.width - 20
-        anchors.top: remaining_txt.bottom
+        anchors.top: remaining_wrapper.bottom
         anchors.topMargin: 15
         anchors.bottom: add_btn.top
         anchors.bottomMargin: 5
@@ -131,6 +143,7 @@ Rectangle{
                         text: date
                         color: "black"
                         font.pointSize: 10
+                        font.family: "Raleway"
                         anchors.centerIn: parent
                     }
                 }
@@ -144,6 +157,7 @@ Rectangle{
                         text: purchase
                         color: "black"
                         font.pointSize: 10
+                        font.family: "Raleway"
                         anchors.centerIn: parent
                     }
                 }
@@ -157,6 +171,7 @@ Rectangle{
                         text: amount
                         color: amount < 0 ? "red" : "green"
                         font.pointSize: 10
+                        font.family: "Raleway"
                         anchors.centerIn: parent
                     }
                 }

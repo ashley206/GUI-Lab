@@ -69,15 +69,7 @@ void Budget::addItem(QString date, QString name, bool expense, double amnt, QStr
     m_count++;
 }
 
-void Budget::removeItem(Item * item)
-{
-//    std::list<Item *>::iterator it;
-//    for (it = m_items.begin(); it != m_items.end(); it++)
-//    {
-//        if (*it == item)
-//            m_items.erase(it++);
-//    }
-}
+
 
 void Budget::editItem(Item item, QString name, bool expense, double amount, QString category)
 {
@@ -85,6 +77,72 @@ void Budget::editItem(Item item, QString name, bool expense, double amount, QStr
     item.setExpense(expense);
     item.setAmount(amount);
     item.setCategory(category);
+}
+
+double Budget::getRentSpent()
+{
+    double total = 0;
+    for(int i = 0; i < m_count; i++)
+    {
+        if(m_items[i]->getCategory() == "Rent")
+            total += m_items[i]->getAmount();
+    }
+    return total;
+}
+
+double Budget::getUtilitiesSpent()
+{
+    double total = 0;
+    for(int i = 0; i < m_count; i++)
+    {
+        if(m_items[i]->getCategory() == "Utilities")
+            total += m_items[i]->getAmount();
+    }
+    return total;
+}
+
+double Budget::getGroceriesSpent()
+{
+    double total = 0;
+    for(int i = 0; i < m_count; i++)
+    {
+        if(m_items[i]->getCategory() == "Groceries")
+            total += m_items[i]->getAmount();
+    }
+    return total;
+}
+
+double Budget::getClothingSpent()
+{
+    double total = 0;
+    for(int i = 0; i < m_count; i++)
+    {
+        if(m_items[i]->getCategory() == "Clothing")
+            total += m_items[i]->getAmount();
+    }
+    return total;
+}
+
+double Budget::getEatingSpent()
+{
+    double total = 0;
+    for(int i = 0; i < m_count; i++)
+    {
+        if(m_items[i]->getCategory() == "Eating Out")
+            total += m_items[i]->getAmount();
+    }
+    return total;
+}
+
+double Budget::getGasSpent()
+{
+    double total = 0;
+    for(int i = 0; i < m_count; i++)
+    {
+        if(m_items[i]->getCategory() == "Gas")
+            total += m_items[i]->getAmount();
+    }
+    return total;
 }
 
 //void Budget::addCategory(QString name)

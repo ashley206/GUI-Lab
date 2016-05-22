@@ -39,7 +39,7 @@ Window {
         }
         add_mouseArea.onClicked: {
             budget_screen.visible = false;
-            add_screen.visible = true;
+            addItem_screen.visible = true;
         }
         setup_mouseArea.onClicked: {
             budget_screen.visible = false;
@@ -52,19 +52,19 @@ Window {
         }
     }
 
-    MyAddScreen{
-        id: add_screen
-        visible: false
-        anchors.fill: parent
-        back_mouseArea.onClicked: {
-            budget_screen.visible = true;
-            add_screen.visible = false;
-        }
-        addItem_mouseArea.onClicked: {
-            add_screen.visible = false;
-            addItem_screen.visible = true;
-        }
-    }
+//    MyAddScreen{
+//        id: add_screen
+//        visible: false
+//        anchors.fill: parent
+//        back_mouseArea.onClicked: {
+//            budget_screen.visible = true;
+//            add_screen.visible = false;
+//        }
+//        addItem_mouseArea.onClicked: {
+//            add_screen.visible = false;
+//            addItem_screen.visible = true;
+//        }
+//    }
 
     AddItemScreen{
         id: addItem_screen
@@ -72,7 +72,7 @@ Window {
         anchors.fill: parent
         back_mouseArea.onClicked: {
             addItem_screen.visible = false;
-            add_screen.visible = true;
+            budget_screen.visible = true;
         }
         onItemAdded: {
             var date = TheBigBudget.getItemDate(TheBigBudget.getCount() - 1)
@@ -80,8 +80,31 @@ Window {
             var amount = TheBigBudget.getItemAmount(TheBigBudget.getCount() - 1)
             var category = TheBigBudget.getItemCategory(TheBigBudget.getCount() - 1)
             budget_screen.newItem.append({ "date":date, "purchase":purchase, "amount":amount });
-            if(category === "Rent")
-                categories_screen.newRentItem.append({ "date":date, "purchase":purchase, "amount":amount });
+            if(category === "Rent"){
+                rentCategory_screen.newRentItem.append({ "date":date, "purchase":purchase, "amount":amount });
+                categories_screen.rentSpent = TheBigBudget.getRentSpent()
+            }
+            else if(category === "Utilities"){
+                utilitiesCategory_screen.newUtilitiesItem.append({ "date":date, "purchase":purchase, "amount":amount });
+                categories_screen.utilitiesSpent = TheBigBudget.getUtilitiesSpent()
+            }
+            else if(category === "Groceries"){
+                groceriesCategory_screen.newGroceriesItem.append({ "date":date, "purchase":purchase, "amount":amount });
+                categories_screen.groceriesSpent = TheBigBudget.getGroceriesSpent()
+            }
+            else if(category === "Clothing"){
+                clothingCategory_screen.newClothingItem.append({ "date":date, "purchase":purchase, "amount":amount });
+                categories_screen.clothingSpent = TheBigBudget.getClothingSpent()
+            }
+            else if(category === "Eating Out"){
+                eatingCategory_screen.newEatingItem.append({ "date":date, "purchase":purchase, "amount":amount });
+                categories_screen.eatingSpent = TheBigBudget.getEatingSpent()
+            }
+            else if(category === "Gas"){
+                gasCategory_screen.newGasItem.append({ "date":date, "purchase":purchase, "amount":amount });
+                categories_screen.gasSpent = TheBigBudget.getGasSpent()
+            }
+
             function getDate(i) {
                 return {date: TheBigBudget.getItemDate(i)};
             }
@@ -97,6 +120,8 @@ Window {
 
             // Update remaining budget.
             budget_screen.remainingBudget = TheBigBudget.getRemainingBudget()
+            addItem_screen.visible = false;
+            budget_screen.visible = true;
         }
     }
 
@@ -125,8 +150,91 @@ Window {
             budget_screen.visible = true;
             categories_screen.visible = false;
         }
+        rent_mouseArea.onClicked: {
+            rentCategory_screen.visible = true;
+            categories_screen.visible = false;
+        }
+        utilities_mouseArea.onClicked: {
+            utilitiesCategory_screen.visible = true;
+            categories_screen.visible = false;
+        }
+        groceries_mouseArea.onClicked: {
+            groceriesCategory_screen.visible = true;
+            categories_screen.visible = false;
+        }
+        clothing_mouseArea.onClicked: {
+            clothingCategory_screen.visible = true;
+            categories_screen.visible = false;
+        }
+        eating_mouseArea.onClicked: {
+            eatingCategory_screen.visible = true;
+            categories_screen.visible = false;
+        }
+        gas_mouseArea.onClicked: {
+            gasCategory_screen.visible = true;
+            categories_screen.visible = false;
+        }
     }
 
+    RentCategory{
+        id: rentCategory_screen
+        visible: false
+        anchors.fill: parent
+        back_mouseArea.onClicked: {
+            categories_screen.visible = true;
+            rentCategory_screen.visible = false;
+        }
+    }
+
+    UtilitiesCategory{
+        id: utilitiesCategory_screen
+        visible: false
+        anchors.fill: parent
+        back_mouseArea.onClicked: {
+            categories_screen.visible = true;
+            utilitiesCategory_screen.visible = false;
+        }
+    }
+
+    GroceriesCategory{
+        id: groceriesCategory_screen
+        visible: false
+        anchors.fill: parent
+        back_mouseArea.onClicked: {
+            categories_screen.visible = true;
+            groceriesCategory_screen.visible = false;
+        }
+    }
+
+    ClothingCategory{
+        id: clothingCategory_screen
+        visible: false
+        anchors.fill: parent
+        back_mouseArea.onClicked: {
+            categories_screen.visible = true;
+            clothingCategory_screen.visible = false;
+        }
+    }
+
+    EatingOutCategory{
+        id: eatingCategory_screen
+        visible: false
+        anchors.fill: parent
+        back_mouseArea.onClicked: {
+            categories_screen.visible = true;
+            eatingCategory_screen.visible = false;
+        }
+    }
+
+    GasCategory{
+        id: gasCategory_screen
+        visible: false
+        anchors.fill: parent
+        back_mouseArea.onClicked: {
+            categories_screen.visible = true;
+            gasCategory_screen.visible = false;
+        }
+    }
 }
 
 

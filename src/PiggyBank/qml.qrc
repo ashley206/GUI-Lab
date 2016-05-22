@@ -9,12 +9,17 @@
         <file>MySettings.qml</file>
         <file>MyTitleBar.qml</file>
         <file>MyBudget.qml</file>
-        <file>MyAddScreen.qml</file>
         <file>AddItemScreen.qml</file>
         <file>../../img/ic_settings_white_36dp.png</file>
         <file>../../img/ic_settings_white_24dp.png</file>
         <file>../../img/ic_settings_white_48dp.png</file>
         <file>../../img/ic_keyboard_arrow_left_white_48dp.png</file>
         <file>MyCategories.qml</file>
+        <file>RentCategory.qml</file>
+        <file>UtilitiesCategory.qml</file>
+        <file>GasCategory.qml</file>
+        <file>EatingOutCategory.qml</file>
+        <file>ClothingCategory.qml</file>
+        <file>GroceriesCategory.qml</file>
     </qresource>
 </RCC>

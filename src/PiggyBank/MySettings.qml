@@ -1,7 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.5
 import Qt.labs.settings 1.0
-
+import QtQuick.Controls.Styles 1.2
 
 
 Rectangle{
@@ -31,20 +31,23 @@ Rectangle{
         id: budget_txt
         text: "What do you want your budget to be?"
         font.pointSize: 11
+        font.family: "Raleway"
         anchors.top: settings_title.bottom
         anchors.topMargin: 15
-        anchors.left: settings_root.left
-        anchors.leftMargin: 10
+        anchors.horizontalCenter: parent.horizontalCenter
     }
 
     TextField{
         id: budget_tf
-        height: budget_txt.height
+        height: 20
         width: 9*(parent.width/10)
         placeholderText: "Enter budget amount"
         anchors.top: budget_txt.bottom
         anchors.topMargin: 10
         anchors.horizontalCenter: parent.horizontalCenter
+//        style: {
+//            font.family = "Raleway"
+//        }
 
         // Ensure they enter a number that has two decimals and is at least 0.00
         validator: DoubleValidator{
@@ -59,7 +62,6 @@ Rectangle{
         text: "Save Changes"
         textColor: "white"
         fontSize: 14
-        //color: setup_title.color
         height: parent.height/10
         width: 9*(parent.width/10)
         anchors.bottom: parent.bottom
@@ -80,6 +82,7 @@ Rectangle{
         text: "Colorblind mode"
         anchors.horizontalCenterOffset: 1
         font.pointSize: 11
+        font.family: "Raleway"
         anchors.top: budget_tf.bottom
         anchors.topMargin: 15
         horizontalAlignment: Text.AlignHCenter
@@ -98,6 +101,7 @@ Rectangle{
         id: currency_txt
         text: "Currency"
         font.pointSize: 11
+        font.family: "Raleway"
         anchors.top: colorblind_switch.bottom
         anchors.topMargin: 15
         horizontalAlignment: Text.AlignHCenter

@@ -30,7 +30,6 @@ public slots:
     double getAmountSpent();
     double getRemainingBudget();
     void addItem(QString date, QString name, bool expense, double amnt, QString category);
-    void removeItem(Item * item);
     void editItem(Item item, QString name, bool expense, double amount, QString category);
 
     Item * getItemAt(int i);
@@ -39,6 +38,13 @@ public slots:
     QString getItemPurchase(int i);
     QString getItemDate(int i);
     QString getItemCategory(int i);
+
+    double getRentSpent();
+    double getUtilitiesSpent();
+    double getGroceriesSpent();
+    double getClothingSpent();
+    double getEatingSpent();
+    double getGasSpent();
 
     //void addCategory(QString name);
     //void removeCategory(Category * c);
