@@ -7,6 +7,16 @@ Rectangle{
 
     property alias back_mouseArea: gas_categories_title.back_btn_mouseArea
     property alias newGasItem: categories_gas_model
+    property bool colorBlind_Checked: false
+
+    onColorBlind_CheckedChanged: {
+        if(colorBlind_Checked){
+            gas_categories_title.color =  "#424242";
+        }
+        else{
+            gas_categories_title.color = "#1DE9B6";
+        }
+    }
 
     MyTitleBar{
         id: gas_categories_title

@@ -9,13 +9,27 @@ Rectangle{
     anchors.fill: parent
     color: "transparent"
     property alias back_mouseArea: settings_title.back_btn_mouseArea
-    signal budgetSet
+    property bool colorBlind: false
+    property alias colorBlind_Checked: colorblind_switch.checked
+
+    signal settingsSave
     property int enteredBudget: 0
+
+    onColorBlind_CheckedChanged: {
+        if(colorBlind_Checked){
+            settings_title.color =  "#424242";
+            setup_save.btnColor = "#757575";
+        }
+        else{
+            settings_title.color = "#1DE9B6";
+            setup_save.btnColor = "#FBC02D";
+        }
+    }
+
     Settings{
         id: settings_global
-        property alias colorblind: colorblind_switch.checked
+        property alias colors: colorblind_switch.checked
         property alias currency: currency_box.currentIndex
-       //property int enteredBudget: 0
 
     }
 
@@ -39,15 +53,12 @@ Rectangle{
 
     TextField{
         id: budget_tf
-        height: 20
-        width: 9*(parent.width/10)
+        height: 30
+        width: 7*(parent.width/10)
         placeholderText: "Enter budget amount"
         anchors.top: budget_txt.bottom
         anchors.topMargin: 10
         anchors.horizontalCenter: parent.horizontalCenter
-//        style: {
-//            font.family = "Raleway"
-//        }
 
         // Ensure they enter a number that has two decimals and is at least 0.00
         validator: DoubleValidator{
@@ -69,10 +80,9 @@ Rectangle{
         anchors.horizontalCenter: parent.horizontalCenter
         mouseArea.onClicked: {
             enteredBudget = budget_tf.text;
-            TheBigBudget.setBudget(enteredBudget);
-            console.log("Set the budget to: ", TheBigBudget.getBudget());
             budget_tf.text = "";    //clear the text
-            budgetSet();
+
+            settingsSave();
         }
     }
 
@@ -94,7 +104,7 @@ Rectangle{
         anchors.top: colorblind_txt.bottom
         anchors.topMargin: 10
         anchors.horizontalCenter: parent.horizontalCenter
-        checked: false
+        checked: colorBlind
     }
 
     Text{

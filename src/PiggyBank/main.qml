@@ -18,21 +18,27 @@ Window {
     title: qsTr("PiggyBank")
     //color: "#FAFAFA"      // TODO: Need logo to be transparent
 
+    property bool colorBlind_Checked: false
+
     SplashTitle{
         id: splash_screen
         visible: true
         anchors.fill: parent
+
+        colorBlind_Checked: settings_screen.colorBlind_Checked
+
         budget_mouseArea.onClicked: {
             splash_screen.visible = false;
             budget_screen.visible = true;
         }
-
     }
 
     MyBudget{
         id: budget_screen
         visible: false
         anchors.fill: parent
+        colorBlind_Checked: settings_screen.colorBlind_Checked
+
         back_mouseArea.onClicked: {
             splash_screen.visible = true;
             budget_screen.visible = false;
@@ -70,6 +76,8 @@ Window {
         id: addItem_screen
         visible: false
         anchors.fill: parent
+        colorBlind_Checked: settings_screen.colorBlind_Checked
+
         back_mouseArea.onClicked: {
             addItem_screen.visible = false;
             budget_screen.visible = true;
@@ -131,14 +139,22 @@ Window {
         id: settings_screen
         visible: false
         anchors.fill: parent
+        colorBlind_Checked: settings_screen.colorBlind_Checked
+
         back_mouseArea.onClicked: {
             budget_screen.visible = true;
             settings_screen.visible = false;
         }
-        onBudgetSet: {
+        onSettingsSave: {
             // Update the budget/remaining budget
-            budget_screen.totalBudget = enteredBudget;
+            TheBigBudget.setBudget(enteredBudget);
+            budget_screen.totalBudget = TheBigBudget.getBudget();
             budget_screen.remainingBudget = TheBigBudget.getRemainingBudget();
+
+            settings_screen.visible = false;
+            budget_screen.visible = true;
+
+
         }
     }
 
@@ -146,6 +162,8 @@ Window {
         id: categories_screen
         visible: false
         anchors.fill: parent
+        colorBlind_Checked: settings_screen.colorBlind_Checked
+
         back_mouseArea.onClicked: {
             budget_screen.visible = true;
             categories_screen.visible = false;
@@ -180,6 +198,8 @@ Window {
         id: rentCategory_screen
         visible: false
         anchors.fill: parent
+        colorBlind_Checked: settings_screen.colorBlind_Checked
+
         back_mouseArea.onClicked: {
             categories_screen.visible = true;
             rentCategory_screen.visible = false;
@@ -190,6 +210,8 @@ Window {
         id: utilitiesCategory_screen
         visible: false
         anchors.fill: parent
+        colorBlind_Checked: settings_screen.colorBlind_Checked
+
         back_mouseArea.onClicked: {
             categories_screen.visible = true;
             utilitiesCategory_screen.visible = false;
@@ -200,6 +222,8 @@ Window {
         id: groceriesCategory_screen
         visible: false
         anchors.fill: parent
+        colorBlind_Checked: settings_screen.colorBlind_Checked
+
         back_mouseArea.onClicked: {
             categories_screen.visible = true;
             groceriesCategory_screen.visible = false;
@@ -210,6 +234,8 @@ Window {
         id: clothingCategory_screen
         visible: false
         anchors.fill: parent
+        colorBlind_Checked: settings_screen.colorBlind_Checked
+
         back_mouseArea.onClicked: {
             categories_screen.visible = true;
             clothingCategory_screen.visible = false;
@@ -220,6 +246,8 @@ Window {
         id: eatingCategory_screen
         visible: false
         anchors.fill: parent
+        colorBlind_Checked: settings_screen.colorBlind_Checked
+
         back_mouseArea.onClicked: {
             categories_screen.visible = true;
             eatingCategory_screen.visible = false;
@@ -230,6 +258,8 @@ Window {
         id: gasCategory_screen
         visible: false
         anchors.fill: parent
+        colorBlind_Checked: settings_screen.colorBlind_Checked
+
         back_mouseArea.onClicked: {
             categories_screen.visible = true;
             gasCategory_screen.visible = false;

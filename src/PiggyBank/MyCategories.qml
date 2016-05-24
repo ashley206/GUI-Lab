@@ -24,6 +24,42 @@ Rectangle{
 
     property alias gas_mouseArea: gas_mouseArea
     property double gasSpent: TheBigBudget.getGasSpent()
+    property bool colorBlind_Checked: false
+
+
+    onColorBlind_CheckedChanged: {
+        if(colorBlind_Checked){
+            categories_title.color =  "#424242";
+            rent_amount_btn.btnColor = "#757575";
+            rent_btn.btnColor = "#757575";
+            utilities_amount_btn.btnColor = "#757575";
+            utilities_btn.btnColor = "#757575";
+            groceries_amount_btn.btnColor = "#757575";
+            groceries_btn.btnColor = "#757575";
+            clothing_amount_btn.btnColor = "#757575";
+            clothing_btn.btnColor = "#757575";
+            eating_amount_btn.btnColor = "#757575";
+            eating_btn.btnColor = "#757575";
+            gas_amount_btn.btnColor = "#757575";
+            gas_btn.btnColor = "#757575";
+
+        }
+        else{
+            categories_title.color = "#1DE9B6";
+            rent_amount_btn.btnColor = "#FBC02D";
+            rent_btn.btnColor = "#FBC02D";
+            utilities_amount_btn.btnColor = "#FBC02D";
+            utilities_btn.btnColor = "#FBC02D";
+            groceries_amount_btn.btnColor = "#FBC02D";
+            groceries_btn.btnColor = "#FBC02D";
+            clothing_amount_btn.btnColor = "#FBC02D";
+            clothing_btn.btnColor = "#FBC02D";
+            eating_amount_btn.btnColor = "#FBC02D";
+            eating_btn.btnColor = "#FBC02D";
+            gas_amount_btn.btnColor = "#FBC02D";
+            gas_btn.btnColor = "#FBC02D";
+        }
+    }
 
     MyTitleBar{
         id: categories_title

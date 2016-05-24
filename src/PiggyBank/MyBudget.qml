@@ -11,8 +11,22 @@ Rectangle{
     property alias add_mouseArea: add_btn.mouseArea
     property double remainingBudget: TheBigBudget.getRemainingBudget()
     property double totalBudget: 0
+    property bool colorBlind_Checked: false
 
     property alias newItem: budget_model
+
+    onColorBlind_CheckedChanged: {
+        if(colorBlind_Checked){
+            budget_title.color =  "#424242";
+            add_btn.btnColor = "#757575";
+            categories_btn.btnColor = "#757575";
+        }
+        else{
+            budget_title.color = "#1DE9B6";
+            add_btn.btnColor = "#FBC02D";
+            categories_btn.btnColor = "#FBC02D";
+        }
+    }
 
     MyTitleBar{
         id: budget_title

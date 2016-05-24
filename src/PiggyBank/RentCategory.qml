@@ -7,6 +7,16 @@ Rectangle{
 
     property alias back_mouseArea: rent_categories_title.back_btn_mouseArea
     property alias newRentItem: categories_rent_model
+    property bool colorBlind_Checked: false
+
+    onColorBlind_CheckedChanged: {
+        if(colorBlind_Checked){
+            rent_categories_title.color =  "#424242";
+        }
+        else{
+            rent_categories_title.color = "#1DE9B6";
+        }
+    }
 
     MyTitleBar{
         id: rent_categories_title

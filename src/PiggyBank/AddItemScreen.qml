@@ -9,7 +9,19 @@ Rectangle{
 
     property alias back_mouseArea: add_item_title.back_btn_mouseArea
     property bool isExpense: expense_box.currentIndex === 0 ? true : false
+    property bool colorBlind_Checked: false
     signal itemAdded
+
+    onColorBlind_CheckedChanged: {
+        if(colorBlind_Checked){
+            add_item_title.color =  "#424242";
+            done_btn.btnColor = "#757575";
+        }
+        else{
+            add_item_title.color = "#1DE9B6";
+            done_btn.btnColor = "#FBC02D";
+        }
+    }
 
     MyTitleBar{
         id: add_item_title
@@ -153,8 +165,8 @@ Rectangle{
                 // If it's an expense, make it negative
                 if(isExpense)
                     amount_tf.text = '-' + amount_tf.text;
-                else
-                    category = "Income";
+//                else
+//                    category = "Income";
                 console.log(amount_tf.text)
                 TheBigBudget.addItem(date,
                                      purchase_ti.text,

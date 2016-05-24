@@ -7,6 +7,16 @@ Rectangle{
 
     property alias back_mouseArea: eating_categories_title.back_btn_mouseArea
     property alias newEatingItem: categories_eating_model
+    property bool colorBlind_Checked: false
+
+    onColorBlind_CheckedChanged: {
+        if(colorBlind_Checked){
+            eating_categories_title.color =  "#424242";
+        }
+        else{
+            eating_categories_title.color = "#1DE9B6";
+        }
+    }
 
     MyTitleBar{
         id: eating_categories_title

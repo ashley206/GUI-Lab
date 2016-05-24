@@ -9,6 +9,14 @@ Rectangle{
     //property alias settings_mouseArea: settings_btn.mouseArea
     property alias budget_mouseArea: budget_btn.mouseArea
     property alias text: title.text
+    property bool colorBlind_Checked: false
+
+    onColorBlind_CheckedChanged: {
+        if(colorBlind_Checked)
+            budget_btn.btnColor = "#757575";
+        else
+            budget_btn.btnColor = "#FBC02D";
+    }
 
     Text{
         id: title
@@ -51,7 +59,6 @@ Rectangle{
         height: 1.5*parent.height/10
         width: 9*(parent.width/10)
         textColor: "white"
-        //color: "#51c460"
         fontSize: 16
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 30

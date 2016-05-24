@@ -7,6 +7,16 @@ Rectangle{
 
     property alias back_mouseArea: clothing_categories_title.back_btn_mouseArea
     property alias newClothingItem: categories_clothing_model
+    property bool colorBlind_Checked: false
+
+    onColorBlind_CheckedChanged: {
+        if(colorBlind_Checked){
+            clothing_categories_title.color =  "#424242";
+        }
+        else{
+            clothing_categories_title.color = "#1DE9B6";
+        }
+    }
 
     MyTitleBar{
         id: clothing_categories_title
