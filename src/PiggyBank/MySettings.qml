@@ -29,7 +29,6 @@ Rectangle{
     Settings{
         id: settings_global
         property alias colors: colorblind_switch.checked
-        property alias currency: currency_box.currentIndex
 
     }
 
@@ -105,32 +104,6 @@ Rectangle{
         anchors.topMargin: 10
         anchors.horizontalCenter: parent.horizontalCenter
         checked: colorBlind
-    }
-
-    Text{
-        id: currency_txt
-        text: "Currency"
-        font.pointSize: 11
-        font.family: "Raleway"
-        anchors.top: colorblind_switch.bottom
-        anchors.topMargin: 15
-        horizontalAlignment: Text.AlignHCenter
-        anchors.horizontalCenter: parent.horizontalCenter
-    }
-    ComboBox{
-        id: currency_box
-        editable: false
-        model: ListModel{
-            id: currency_model
-            ListElement{ text: "USD"; }
-            ListElement{ text: "GBP"; }
-            ListElement{ text: "EUR"; }
-        }
-        // On accepted, change setting?
-        width: parent.width/5
-        anchors.top: currency_txt.bottom
-        anchors.topMargin: 10
-        anchors.horizontalCenter: parent.horizontalCenter
     }
 
 }

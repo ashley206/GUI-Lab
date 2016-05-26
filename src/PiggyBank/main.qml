@@ -38,7 +38,6 @@ Window {
         visible: false
         anchors.fill: parent
         colorBlind_Checked: settings_screen.colorBlind_Checked
-
         back_mouseArea.onClicked: {
             splash_screen.visible = true;
             budget_screen.visible = false;
