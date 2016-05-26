@@ -1,4 +1,5 @@
 #include "Budget.h"
+#include <math.h>
 
 Budget::Budget(): m_budget(0), m_count(0)
 {
@@ -16,12 +17,12 @@ void Budget::setBudget(double budget)
 
 double Budget::getBudget()
 {
-    return m_budget;
+    return (ceilf(m_budget * 100) / 100);
 }
 
 double Budget::getAmountSpent()
 {
-    int total = 0;
+    double total = 0;
     for(int i = 0; i < m_count; i++)
     {
         // If an expense, add to total spend. Else, "saved".
@@ -32,7 +33,7 @@ double Budget::getAmountSpent()
 
 double Budget::getRemainingBudget()
 {
-    return m_budget - getAmountSpent();
+    return m_budget - (ceilf(getAmountSpent() * 100) / 100);
 }
 
 Item * Budget::getItemAt(int i)
@@ -87,7 +88,7 @@ double Budget::getRentSpent()
         if(m_items[i]->getCategory() == "Rent")
             total += m_items[i]->getAmount();
     }
-    return total;
+    return ceilf(total * 100) / 100;
 }
 
 double Budget::getUtilitiesSpent()
@@ -98,7 +99,7 @@ double Budget::getUtilitiesSpent()
         if(m_items[i]->getCategory() == "Utilities")
             total += m_items[i]->getAmount();
     }
-    return total;
+    return ceilf(total * 100) / 100;
 }
 
 double Budget::getGroceriesSpent()
@@ -109,7 +110,7 @@ double Budget::getGroceriesSpent()
         if(m_items[i]->getCategory() == "Groceries")
             total += m_items[i]->getAmount();
     }
-    return total;
+    return ceilf(total * 100) / 100;
 }
 
 double Budget::getClothingSpent()
@@ -120,7 +121,7 @@ double Budget::getClothingSpent()
         if(m_items[i]->getCategory() == "Clothing")
             total += m_items[i]->getAmount();
     }
-    return total;
+    return ceilf(total * 100) / 100;
 }
 
 double Budget::getEatingSpent()
@@ -131,7 +132,7 @@ double Budget::getEatingSpent()
         if(m_items[i]->getCategory() == "Eating Out")
             total += m_items[i]->getAmount();
     }
-    return total;
+    return ceilf(total * 100) / 100;
 }
 
 double Budget::getGasSpent()
@@ -142,68 +143,10 @@ double Budget::getGasSpent()
         if(m_items[i]->getCategory() == "Gas")
             total += m_items[i]->getAmount();
     }
-    return total;
+    return ceilf(total * 100) / 100;
 }
 
-//void Budget::addCategory(QString name)
-//{
-//    Category * cat = new Category(name);
-//    m_categories.push_back(cat);
-//    m_count++;
-//}
-
-//void Budget::removeCategory(Category *c)
-//{
-////    std::list<Category *>::iterator it;
-////    bool found = false;
-////    for (it = m_categories.begin(); it != m_categories.end(); it++)
-////    {
-////        if (*it == c)
-////        {
-////            found = true;
-////            m_categories.erase(it++);
-////        }
-////    }
-////    if(found)
-////        m_count--;
-//    if(m_categories.contains(c))
-//    {
-//        QList<Category *>::iterator it = m_categories.begin();
-//        if((*it) == c)
-//            it = m_categories.erase(it);
-//        else
-//            it++;
-////        int index = 0;
-////        QListIterator<Category *> i(m_categories);
-////        if(i.next() != c)
-////        {
-////            i.next();
-////            index++;
-////        }
-////        m_categories.removeAt(index);
-//    }
-//}
-
-//void Budget::purgeCategories()
-//{
-//    QList<Category *>::iterator it = m_categories.begin();
-//    while(it != m_categories.end())
-//        it = m_categories.erase(it++);
-
-////    std::list<Category *>::iterator it;
-////    for (it = m_categories.begin(); it != m_categories.end(); it++)
-////    {
-////        m_categories.erase(it++);
-////    }
-
-//}
-
-//QString Budget::displayCategoryName(int i)
-//{
-//    return m_categories.at(i)->getName();
-//}
 
 Budget::~Budget()
 {
-    //purgeCategories();
 }

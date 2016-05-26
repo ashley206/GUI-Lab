@@ -12,10 +12,14 @@ Rectangle{
     property bool colorBlind_Checked: false
 
     onColorBlind_CheckedChanged: {
-        if(colorBlind_Checked)
+        if(colorBlind_Checked){
+            title.color = "#424242";
             budget_btn.btnColor = "#757575";
-        else
+        }
+        else{
+            title.color = "#1DE9B6";
             budget_btn.btnColor = "#FBC02D";
+        }
     }
 
     Text{

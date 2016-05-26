@@ -5,14 +5,10 @@
 #include <QtGlobal>
 class Item
 {
-
-
 public:
     Item();
     Item(QString date, QString name, bool expense, double amount, QString category);
-    //Item & operator=(const Item & rhs);
     bool operator==(const Item & rhs);
-    //bool operator!=(const Item & rhs);
     void setName(QString name);
     QString getName();
     void setDate(QString date);

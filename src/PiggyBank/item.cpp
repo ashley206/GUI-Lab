@@ -9,31 +9,13 @@ Item::Item()
 
 Item::Item(QString date, QString name, bool expense, double amount, QString category)
 {
-    //m_name = new char[strlen(name) + 1];
     m_date = date;
     m_name = name;
-    //strcpy(m_name, name);
     m_isExpense = expense;
     m_amount = amount;
     m_category = category;
 }
 
-//Item & Item::operator=(const Item & rhs)
-//{
-//    if (this != &rhs)
-//    {
-//        if (strlen(rhs.m_name) > strlen(m_name))
-//        {
-//            delete[]m_name;
-//            m_name = new char[strlen(rhs.m_name) + 1];
-
-//        }
-//        strcpy(m_name, rhs.m_name);
-//    }
-//    m_amount = rhs.m_amount;
-//    m_isExpense = rhs.m_isExpense;
-//    return *this;
-//}
 
 bool Item::operator==(const Item & rhs)
 {
@@ -48,10 +30,6 @@ bool Item::operator==(const Item & rhs)
         (m_category == rhs.m_category));
 }
 
-//bool Item::operator!=(const Item & rhs)
-//{
-//    return !(rhs == this);
-//}
 
 void Item::setName(QString name)
 {

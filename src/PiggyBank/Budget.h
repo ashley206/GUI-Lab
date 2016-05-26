@@ -6,13 +6,9 @@
 #include <QDebug>
 #include <QtGlobal>
 #include <QList>
-//#include <QTime>
 
-#include <list>
 #include "Item.h"
-//#include "Category.h"
 #include <string.h>
-using std::list;
 
 enum Categories {RENT, UTILITIES, CLOTHING, EATING_OUT, GROCERIES, GAS, INCOME};
 
@@ -46,14 +42,8 @@ public slots:
     double getEatingSpent();
     double getGasSpent();
 
-    //void addCategory(QString name);
-    //void removeCategory(Category * c);
-    //void purgeCategories();
-    //QString displayCategoryName(int i);
-
 protected:
     QList<Item *> m_items;
-    //QList<Category *> m_categories;
     double m_budget;
     int m_count;
 };

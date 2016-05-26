@@ -10,7 +10,7 @@ Rectangle{
     property alias categories_mouseArea: categories_btn.mouseArea
     property alias add_mouseArea: add_btn.mouseArea
     property double remainingBudget: TheBigBudget.getRemainingBudget()
-    property double totalBudget: 0
+    property double totalBudget: 0.00
     property bool colorBlind_Checked: false
 
     property alias newItem: budget_model
@@ -85,10 +85,8 @@ Rectangle{
         id: add_btn
         height: 90
         width: 90
-        //color: budget_title.color
         radius: 2000
         text: "+"
-        // wrap mode??
         fontSize: 36
         textColor: "white"
         anchors.horizontalCenter: budget_wrapper.horizontalCenter
