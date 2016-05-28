@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+	<Name>PiggyBank</Name>
+	<Version>1.0.0</Version>
+	<Title>PiggyBank Installer</Title>
+	<Publisher>Ashley Wagner CST238</Publisher>
+	<StartMenuDir>PiggyBank App</StartMenuDir>
+	<TargetDir>@HomeDir@/</TargetDir>
+</Installer>
