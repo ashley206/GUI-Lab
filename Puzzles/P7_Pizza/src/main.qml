@@ -8,7 +8,6 @@ Window {
     maximumWidth: 900
     minimumWidth: 900
     minimumHeight: 800
-
     PizzaBuilderScreen{
         anchors.fill: parent
     }

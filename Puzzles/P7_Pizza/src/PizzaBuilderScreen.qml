@@ -47,9 +47,18 @@ Rectangle {
             listData.append({"name":"Anchovies"})
             listData.append({"name":"Tomatoes"})
             listData.append({"name":"Pineapple"})
-            listData.append({"name":"Your Choice"})
+            listData.append({"name":"Green Peppers"})
         }
         onClickedItem: {
+            console.log("Index: ", index);
+            console.log("Clicked ", listData.get(index).name);
+            console.log(listData.get(index))
+            chosenContainer.listData.append(listData.get(index));
+            // not removing right :(
+
+
+            PizzaBuilder.chooseTopping(listData.get(index).name);
+            listData.remove(listData.get(index));
 
         }
     }

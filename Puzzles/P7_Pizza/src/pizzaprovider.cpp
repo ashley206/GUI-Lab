@@ -28,6 +28,10 @@ PizzaProvider::PizzaProvider(QObject *parent) : QObject(parent)
     m_loadedImages.insert("pineapple",image_to_load);
 
     // Load your new topping imagine like above
+    image_to_load = new QImage(95,95, QImage::Format_RGB32);
+    image_to_load->load(":/images/greenpeppers.png");
+    m_loadedImages.insert("green pepper", image_to_load);
+
 }
 
 QQuickImageResponse * PizzaProvider::requestImageResponse(const QString &id, const QSize &requestedSize)
